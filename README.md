@@ -67,6 +67,8 @@ elmo-hikes/
 
 ## Contributors
 - **Bill** - BCIT CST first term student with no prior experience attempting first project. Has an interest in the outdoors and food. 
+- **Luka Gajic** - BCIT CST Student in comp 1800. 
+- **Oliver Wright** - BCIT CST Student with a perfectly normally sized dice collection. Fun fact: Types at 110 wpm average.
 
 ---
 
