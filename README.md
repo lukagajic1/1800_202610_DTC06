@@ -66,6 +66,7 @@ elmo-hikes/
 
 
 ## Contributors
+- **Luka Gajic** - BCIT CST Student in comp 1800. 
 - **Oliver Wright** - BCIT CST Student with a perfectly normally sized dice collection. Fun fact: Types at 110 wpm average.
 
 ---
