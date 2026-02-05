@@ -1,25 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App">
+    <meta name="comp1800 template" content="My 1800 App" />
 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="module" src="./src/main.js"></script>
+    <!-- TO REFERENCE FOR CREDIT OF IMAGES <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mavadee - Flaticon</a> -->
     <!-- Other libraries go here -->
+  </head>
 
-</head>
+  <body>
+    <!-- NAVBAR STARTS HERE -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #add8e6">
+      <div class="container-fluid">
+        <img
+          src="./images/book.png"
+          alt=""
+          style="max-width: 30px; max-height: 30px; margin-right:10px;"
+        />
+        <a class="navbar-brand" href="#">Guidebook Vancouver</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-column align-items-center"
+                href="#"
+              >
+                <img
+                  src="./images/home.png"
+                  alt=""
+                  style="max-width: 24px; max-height: 24px"
+                /><span>Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-column align-items-center"
+                href="#"
+              >
+                <img
+                  src="./images/user.png"
+                  alt=""
+                  style="max-width: 24px; max-height: 24px"
+                /><span>Profile</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-column align-items-center"
+                href="#"
+              >
+                <img
+                  src="./images/calendar.png"
+                  alt=""
+                  style="max-width: 24px; max-height: 24px"
+                /><span>Itinerary</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-column align-items-center"
+                href="#"
+              >
+                <img
+                  src="./images/map.png"
+                  alt=""
+                  style="max-width: 24px; max-height: 24px"
+                /><span>Event Map</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-column align-items-center"
+                href="#"
+              >
+                <img
+                  src="./images/question.png"
+                  alt=""
+                  style="max-width: 24px; max-height: 24px"
+                /><span>Help</span>
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-primary"
+              type="submit"
+              style="margin-right: 15px"
+            >
+              Search
+            </button>
+          </form>
 
-<body>
+          <div class="btn-group">
+            <button
+              class="btn btn-light dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Menu
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Support</a></li>
+              <li><a class="dropdown-item" href="#">About Us</a></li>
+              <li><a class="dropdown-item" href="#">Contact Us</a></li>
+              <li><a class="dropdown-item" href="#">Report an Issue</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- NAVBAR ENDS HERE -->
 
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
-
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -27,7 +145,5 @@
 
     <!-- Link to scripts of your own -->
     <!-- <script type="module" src="./src/main.js"></script> -->
-
-</body>
-
+  </body>
 </html>
