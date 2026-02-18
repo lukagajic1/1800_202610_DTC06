@@ -17,84 +17,9 @@
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
-
-    <!-- <nav class="h-[100px] w-full bg-blue-900 flex items-center">
-      <div class="flex items-center gap-2 px-6 w-full">
-        <ul class="flex flex-1 items-center gap-4">
-          <li>
-            <a class="flex items-center" href=""
-              ><img
-                class="mx-2 w-[30px] h-[30px]"
-                src="images/book-white.svg"
-                alt=""
-              />
-              <span class="text-xl">Guidebook Vancouver</span></a
-            >
-          </li>
-
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/home.png" alt="" />
-              <span>Home</span></a
-            >
-          </li>
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/user.png" alt="" />
-              <span>Profile</span></a
-            >
-          </li>
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img
-                class="w-[30px] h-[30px]"
-                src="images/calendar.png"
-                alt=""
-              />
-              <span>Itinerary</span></a
-            >
-          </li>
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/map.png" alt="" />
-              <span>Event Map</span></a
-            >
-          </li>
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img
-                class="w-[30px] h-[30px]"
-                src="images/question.png"
-                alt=""
-              />
-              <span>Help</span></a
-            >
-          </li>
-        </ul>
-
-        <div class="flex items-center gap-4 ml-auto">
-          <input
-            type="text"
-            placeholder="Search"
-            class="w-[300px] px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-
-          <button
-            class="px-6 py-3 rounded-lg border-2 border-blue-500 text-blue-500 font-medium hover:bg-blue-500 hover:text-white transition"
-          >
-            Search
-          </button>
-          <button
-            class="flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-gray-300 hover:bg-gray-100"
-          >
-            Menu
-          </button>
-        </div>
-      </div>
-    </nav> -->
-    <nav class="bg-blue-900 text-white p-5">
-      <div class="flex justify-between">
-        <div class="flex">
+    <nav class="bg-blue-900 text-white">
+      <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-blue-900">
+        <div class="flex p-2">
           <img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
           <h3 class="font-bold text-xl">
             Guidebooking <br>Vancouver
@@ -133,6 +58,29 @@
         </div>
 
       </div>
+
+      <div class="flex justify-between p-3 rounded-t-[30px] gap-5 visible md:hidden fixed inset-x-0 bottom-0 min-w-full bg-blue-950 md:relative">
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/calendar-white.svg" alt="" />
+              <span>Itinerary</span></a>
+          </button>
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/map-white.svg" alt="" />
+              <span>Event Map</span></a>
+          </button>
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
+              <span>Settings</span></a>
+          </button>
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+              <span>Log In</span></a>
+          </button>
+        </div>
 
     </nav>
 
