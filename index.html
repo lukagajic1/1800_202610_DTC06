@@ -8,12 +8,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <script type="module" src="./src/main.js"></script> -->
-    <!-- TO REFERENCE FOR CREDIT OF IMAGES <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mavadee - Flaticon</a> -->
-    <!-- Other libraries go here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js"></script>
+    
   </head>
 
-  <body>
+  <body  onload="showEvents()">
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
@@ -88,8 +89,10 @@
     <!-- NAVBAR ENDS HERE -->
     <!-- NAVBAR ENDS HERE -->
 
-    <!-- HERO STARTS HERE -->
+ 
       <main class="bg-blue-200 p-18 pb-60 md:pt-0 pt-10">
+      
+      <!-- HERO STARTS HERE -->
       <div class="flex pt-16 max-w-4xl mx-auto sm:text-6xl text-5xl">
         <section class="w-1/2 mr-2 md:mr-8 bg-white mx-10 rounded-tr-[100px] py-24">
         <h3 class=" text-semibold pb-5 text-right m-5">
@@ -110,10 +113,17 @@
         </div>
         
       </aside>
+      <!-- HERO ENDS HERE -->
 
     </main>
+
+    <!-- Temporary event holder and label here! if you see this Bill, please create a nicer version here in css/html and I'll implement it into JS. Thanks!-->
+    <label class="text-xl font-bold mx-1">Events near You</label>
+    <div id="eventHolder">
+    </div>
     
-    <!-- HERO ENDS HERE -->
+    
+    
 
     <!------------------------------>
     <!-- Your HTML Layout go here -->
