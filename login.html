@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guidebook Vancouver</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <script type="module" src="./src/main.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../src/main.js"></script>
 </head>
 <body>
     <!-- NAVBAR STARTS HERE -->
@@ -12,10 +19,10 @@
     <nav class="bg-blue-900 text-white z-10 relative">
       <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-blue-900">
         <div class="flex p-2">
-          <img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
+          <a class="flex" href="index.html"><img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
           <h3 class="font-bold text-xl">
             Guidebooking <br>Vancouver
-          </h3>
+          </h3></a>
         </div>
 
         <div class="md:flex gap-5 hidden md:visible">
@@ -35,7 +42,7 @@
               <span>Settings</span></a>
           </button>
           <button>
-            <a class="flex flex-col items-center" href=""
+            <a class="flex flex-col items-center" href="login.html"
               ><img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
               <span>Log In</span></a>
           </button>
@@ -81,7 +88,7 @@
     <!-- NAVBAR ENDS HERE -->
 
 
-    
+
     <!-- FOOTER STARTS HERE -->
     <footer class="bg-gray-900 text-gray-200 py-10">
       <div class="max-w-full justify-center px-4 flex md:gap-60 gap-14">
