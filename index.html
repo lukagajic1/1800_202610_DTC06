@@ -17,7 +17,7 @@
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
-    <nav class="bg-blue-900 text-white">
+    <nav class="bg-blue-900 text-white z-10 relative">
       <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-blue-900">
         <div class="flex p-2">
           <img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
@@ -89,22 +89,30 @@
     <!-- NAVBAR ENDS HERE -->
 
     <!-- HERO STARTS HERE -->
-    <!-- I want to make this background an image eventually, but I will probably make a custom bg. Its blue for now, sorry. -ollie -->
-    <main class="bg-blue-200 px-10 py-20 pb-60">
-      <div class="">
-        <h3 class="text-6xl text-semibold pb-5">
-          Your Guidebook <br />
-          to Vancouver
+      <main class="bg-blue-200 p-18 pb-60 md:pt-0 pt-10">
+      <div class="flex pt-16 max-w-4xl mx-auto sm:text-6xl text-5xl">
+        <section class="w-1/2 mr-2 md:mr-8 bg-white mx-10 rounded-tr-[100px] py-24">
+        <h3 class=" text-semibold pb-5 text-right m-5">
+          Your <br>Guide <br> Book
         </h3>
-        <p>Find events near you.</p>
-        <div class="bg-white w-1/2 rounded-lg my-3">
-          <label class="text-gray-600 w-1/2" for="search"
-            >Enter a location.</label
-          >
-          <input class="rounded-lg w-1/2" name="search" />
+      </section>
+      <aside class="w-1/2 ml-2 md:ml-8 bg-white mx-10 rounded-tl-[100px] py-36 relative">
+        <div class="m-5">
+          <h3 class="text-semibold text-left">
+          To <br>
+        </h3>
+        <h4 class="text-3xl sm:text-5xl md:text-6xl text-semibold pb-5 text-left">Vancouver</h4>
+
+        <p class="absolute bottom-0 right-0 p-2 text-base">
+          Welcome [user_name]!
+        </p>
+
         </div>
-      </div>
+        
+      </aside>
+
     </main>
+    
     <!-- HERO ENDS HERE -->
 
     <!------------------------------>
@@ -119,7 +127,7 @@
     <!-- Link to scripts of your own -->
     <!-- <script type="module" src="./src/main.js"></script> -->
     <footer class="bg-gray-900 text-gray-200 py-10">
-      <div class="max-w-full justify-center mx-auto px-4 flex gap-80">
+      <div class="max-w-full justify-center px-4 flex md:gap-60 gap-14">
         <div>
           <h3 class="text-sm font-semibold text-gray-400 uppercase mb-4">
             Services
