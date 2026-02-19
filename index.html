@@ -17,101 +17,102 @@
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
-    <nav class="h-[100px] w-full bg-blue-900 flex items-center">
-      <div class="flex items-center gap-2 px-6 w-full">
-        <ul class="flex flex-1 items-center gap-4">
-          <li>
-            <a class="flex items-center" href=""
-              ><img
-                class="mx-2 w-[30px] h-[30px]"
-                src="images/book.png"
-                alt=""
-              />
-              <span class="text-2xl">Guidebook Vancouver</span></a
-            >
-          </li>
+    <nav class="bg-blue-900 text-white z-10 relative">
+      <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-blue-900">
+        <div class="flex p-2">
+          <img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
+          <h3 class="font-bold text-xl">
+            Guidebooking <br>Vancouver
+          </h3>
+        </div>
 
-          <li>
+        <div class="md:flex gap-5 hidden md:visible">
+          <button>
             <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/home.png" alt="" />
-              <span>Home</span></a
-            >
-          </li>
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/user.png" alt="" />
-              <span>Profile</span></a
-            >
-          </li>
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img
-                class="w-[30px] h-[30px]"
-                src="images/calendar.png"
-                alt=""
-              />
-              <span>Itinerary</span></a
-            >
-          </li>
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/map.png" alt="" />
-              <span>Event Map</span></a
-            >
-          </li>
-          <li>
-            <a class="flex flex-col items-center" href=""
-              ><img
-                class="w-[30px] h-[30px]"
-                src="images/question.png"
-                alt=""
-              />
-              <span>Help</span></a
-            >
-          </li>
-        </ul>
-
-        <div class="flex items-center gap-4 ml-auto">
-          <input
-            type="text"
-            placeholder="Search"
-            class="w-[300px] px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-
-          <button
-            class="px-6 py-3 rounded-lg border-2 border-blue-500 text-blue-500 font-medium hover:bg-blue-500 hover:text-white transition"
-          >
-            Search
+              ><img class="w-[30px] h-[30px]" src="images/calendar-white.svg" alt="" />
+              <span>Itinerary</span></a>
           </button>
-          <button
-            class="flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-gray-300 hover:bg-gray-100"
-          >
-            Menu
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/map-white.svg" alt="" />
+              <span>Event Map</span></a>
+          </button>
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
+              <span>Settings</span></a>
+          </button>
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+              <span>Log In</span></a>
           </button>
         </div>
+
+        <div class="flex bg-white rounded-[20px] max-h-12">
+          <input type="text" placeholder="Search" class="max-h-10 bg-white rounded-[20px] m-2">
+          <button class="bg-blue-950 rounded-r-[20px] px-2">
+            <img src="images/search-white.svg" class="w-[30px]"/>
+          </button>
+
+        </div>
+
       </div>
+
+      <div class="flex justify-between p-3 rounded-t-[30px] gap-5 visible md:hidden fixed inset-x-0 bottom-0 min-w-full bg-blue-950 md:relative">
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/calendar-white.svg" alt="" />
+              <span>Itinerary</span></a>
+          </button>
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/map-white.svg" alt="" />
+              <span>Event Map</span></a>
+          </button>
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
+              <span>Settings</span></a>
+          </button>
+          <button>
+            <a class="flex flex-col items-center" href=""
+              ><img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+              <span>Log In</span></a>
+          </button>
+        </div>
+
     </nav>
+
     <!-- NAVBAR ENDS HERE -->
     <!-- NAVBAR ENDS HERE -->
     <!-- NAVBAR ENDS HERE -->
 
     <!-- HERO STARTS HERE -->
-    <!-- I want to make this background an image eventually, but I will probably make a custom bg. Its blue for now, sorry. -ollie -->
-    <main class="bg-blue-200 px-10 py-20 pb-60">
-      <div class="">
-        <h3 class="text-6xl text-semibold pb-5">
-          Your Guidebook <br />
-          to Vancouver
+      <main class="bg-blue-200 p-18 pb-60 md:pt-0 pt-10">
+      <div class="flex pt-16 max-w-4xl mx-auto sm:text-6xl text-5xl">
+        <section class="w-1/2 mr-2 md:mr-8 bg-white mx-10 rounded-tr-[100px] py-24">
+        <h3 class=" text-semibold pb-5 text-right m-5">
+          Your <br>Guide <br> Book
         </h3>
-        <p>Find events near you.</p>
-        <div class="bg-white w-1/2 rounded-lg my-3">
-          <label class="text-gray-600 w-1/2" for="search"
-            >Enter a location.</label
-          >
-          <input class="rounded-lg w-1/2" name="search" />
+      </section>
+      <aside class="w-1/2 ml-2 md:ml-8 bg-white mx-10 rounded-tl-[100px] py-36 relative">
+        <div class="m-5">
+          <h3 class="text-semibold text-left">
+          To <br>
+        </h3>
+        <h4 class="text-3xl sm:text-5xl md:text-6xl text-semibold pb-5 text-left">Vancouver</h4>
+
+        <p class="absolute bottom-0 right-0 p-2 text-base">
+          Welcome [user_name]!
+        </p>
+
         </div>
-      </div>
+        
+      </aside>
+
     </main>
+    
     <!-- HERO ENDS HERE -->
 
     <!------------------------------>
@@ -126,7 +127,7 @@
     <!-- Link to scripts of your own -->
     <!-- <script type="module" src="./src/main.js"></script> -->
     <footer class="bg-gray-900 text-gray-200 py-10">
-      <div class="max-w-full justify-center mx-auto px-4 flex gap-80">
+      <div class="max-w-full justify-center px-4 flex md:gap-60 gap-14">
         <div>
           <h3 class="text-sm font-semibold text-gray-400 uppercase mb-4">
             Services
