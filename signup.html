@@ -16,8 +16,8 @@
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
-    <nav class="bg-blue-900 text-white z-10 relative">
-      <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-blue-900">
+    <nav class="bg-[#00C7A9] text-white z-10 relative">
+      <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-[#00C7A9]">
         <div class="flex p-2">
           <a class="flex" href="index.html"><img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
           <h3 class="font-bold text-xl">
@@ -48,17 +48,20 @@
           </button>
         </div>
 
-        <div class="flex bg-white rounded-[20px] max-h-12">
+        <div class="pt-4 px-2">
+          <div class="flex bg-white rounded-[20px] max-h-12">
           <input type="text" placeholder="Search" class="max-h-10 bg-white rounded-[20px] m-2">
-          <button class="bg-blue-950 rounded-r-[20px] px-2">
+          <button class="bg-[#26BDD9] rounded-r-[20px] px-2">
             <img src="images/search-white.svg" class="w-[30px]"/>
           </button>
 
         </div>
+        </div>
+        
 
       </div>
 
-      <div class="flex justify-between p-3 rounded-t-[30px] gap-5 visible md:hidden fixed inset-x-0 bottom-0 min-w-full bg-blue-950 md:relative">
+      <div class="flex justify-between p-3 rounded-t-[30px] gap-5 visible md:hidden fixed inset-x-0 bottom-0 min-w-full bg-[#00C7A9] md:relative">
           <button>
             <a class="flex flex-col items-center" href=""
               ><img class="w-[30px] h-[30px]" src="images/calendar-white.svg" alt="" />
@@ -88,16 +91,17 @@
     <!-- NAVBAR ENDS HERE -->
 
 
-    <main class="bg-blue-200 py-40">
+    <main class="bg-white py-40">
 
-      <div class="text-center">
-        <h3>Sign up</h3>
+      <div class="text-center rounded-xl bg-[#00C7A9] md:w-72 w-64 mx-auto py-5">
+        <h3 class="font-semibold text-white">Sign up</h3>
         <div class="">
-          <input type="text" placeholder="Username" class="rounded-lg my-2" id="signUpUser"> <br>
-          <input type="text" placeholder="Password" class="rounded-lg my-2" id="signUpPass">
+          <input type="text" placeholder="Email" class="rounded-lg my-2 px-1" id="logInEmail"> <br>
+          <input type="text" placeholder="Username" class="rounded-lg my-2 px-1" id="signUpUser"> <br>
+          <input type="text" placeholder="Password" class="rounded-lg my-2 px-1" id="signUpPass">
         </div>
-        <div class="text-blue-800 underline">
-          <a class="" href="login.html">Already signed up?</a>
+        <div class="underline">
+          <a class="text-white" href="login.html">Already signed up?</a>
         </div>
       </div>
 
