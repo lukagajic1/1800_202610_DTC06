@@ -42,8 +42,8 @@ function showEvents() {
 
       <div class="flex flex-row gap-3 mt-4">
         <button class="bg-gray-600 text-white px-4 py-2 rounded-lg">
-        <a href="eventGeneric.html"></a>
-          View Event
+        <a href="eventGeneric.html">
+          View Event </a>
         </button>
         <button class="bg-gray-600 text-white px-4 py-2 rounded-lg">
           Add Event to Itinerary
