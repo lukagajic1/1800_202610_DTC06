@@ -22,8 +22,38 @@ const sampleEvent = {
 
 function showEvents() {
     let shownEvent = ""
-    shownEvent += `<div class="m-2">`
-    shownEvent += `<div class="flex gap-2 p-1"> <div> <h1 class="text-semibold text-lg"> ${sampleEvent.name} </h1> <h2 class="text-semibold text-base"> ${sampleEvent.type} </h2> <h2 class="font-semibold text-base"> ${sampleEvent.date} </h2> <p>${sampleEvent.descShort}</p> </div> <img src=${sampleEvent.previmage}  class="w-1/2 rounded-lg" alt="EventImg"> </div> <div class="flex justify-between"> <a href="eventGeneric.html"> <button class="bg-[#00C7A9] text-white rounded-full p-1"> Read More </button> </a> <button class="bg-[#00C7A9] text-white rounded-full p-1"> See on Map </button> </div>`
+    shownEvent += `<div class="m-5 gap-2 flex w-full">`
+
+    for (let i=0; i < 3; i++){
+        shownEvent += `<section class="flex flex-row mx-auto mt-6">
+    <article class="flex-col rounded-xl p-4 shadow-md w-52">
+      
+      <section class="h-40 border border-solid m-5 p-5 rounded-xl">
+    
+      </section>
+
+      <h1 class="font-bold text-lg mt-2">
+        ${sampleEvent.name}
+      </h1>
+
+      <p class="text-sm text-gray-600">
+        ${sampleEvent.type}, ${sampleEvent.date}
+      </p>
+
+      <div class="flex flex-row gap-3 mt-4">
+        <button class="bg-gray-600 text-white px-4 py-2 rounded-lg">
+        <a href="eventGeneric.html"></a>
+          View Event
+        </button>
+        <button class="bg-gray-600 text-white px-4 py-2 rounded-lg">
+          Add Event to Itinerary
+        </button>
+      </div>
+
+    </article>
+  </section>`
+    }
+    
     shownEvent += `</div>`
 
     $("#eventHolder").append(shownEvent)
