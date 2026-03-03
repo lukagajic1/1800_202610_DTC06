@@ -62,7 +62,7 @@ function showEvents() {
 function eventPage() {
     let eventPage = ""
     eventPage += `<div class="m-2">`
-    eventPage += `<div class="flex gap-2 p-1"> <div> <h1 class="font-semibold text-lg"> ${sampleEvent.name} </h1> <h2 class="text-semibold text-base"> ${sampleEvent.type} </h2> <h2 class="text-semibold text-base"> ${sampleEvent.date} </h2> <p>${sampleEvent.descLong}</p> </div> <img src=${sampleEvent.previmage}  class="size-64 rounded-lg" alt="EventImg"> </div> <div class="flex justify-between"> <a href="eventGeneric.html"> <button class="bg-[#00C7A9] text-white rounded-full hidden p-1"> Read More </button> </a> <button class="bg-[#00C7A9] text-white rounded-full p-1"> See on Map </button> </div>`
+    eventPage += `<div class="flex gap-2 p-1"> <div> <h1 class="font-semibold text-lg"> ${sampleEvent.name} </h1> <h2 class="text-semibold text-base"> ${sampleEvent.type} </h2> <h2 class="text-semibold text-base"> ${sampleEvent.date} </h2> <p>${sampleEvent.descShort}</p> </div> <img src=${sampleEvent.previmage}  class="size-64 rounded-lg" alt="EventImg"> </div> <div class="flex justify-between"> <a href="eventGeneric.html"> <button class="bg-[#00C7A9] text-white rounded-full hidden p-1"> Read More </button> </a> <button class="bg-[#00C7A9] text-white rounded-full p-1"> See on Map </button> </div>`
     eventPage += `</div>`
 
     $("#mainEventPage").append(eventPage)
