@@ -7,10 +7,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <script type="module" src="./src/main.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../src/main.js"></script>
+    <!-- <script src="../src/main.js"></script> -->
+    <script type="module" src="/src/components/sitenavbar.js"></script>
+    <!-- <script type="module" src="/src/components/site-footer.js"></script> -->
     
   </head>
 
@@ -18,7 +19,7 @@
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
-    <nav class="bg-[#00C7A9] text-white z-10 relative">
+    <!-- <nav class="bg-[#00C7A9] text-white z-10 relative">
       <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-[#00C7A9]">
         <div class="flex p-2">
           <a class="flex" href="index.html"><img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
@@ -84,7 +85,9 @@
           </button>
         </div>
 
-    </nav>
+    </nav> -->
+
+    <site-navbar></site-navbar>
 
     <!-- NAVBAR ENDS HERE -->
     <!-- NAVBAR ENDS HERE -->
