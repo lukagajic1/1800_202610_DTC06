@@ -8,140 +8,135 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <script type="module" src="./src/main.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../src/main.js"></script>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script type="module" src="/src/firebaseConfig.js"></script>
+    <script type="module" src="/src/authentication.js"></script>
+    <script type="module" src="/src/loginSignup.js"></script>
+    <script type="module" src="/src/components/sitenavbar.js"></script>
+    
+    
 </head>
-<body>
-    <!-- NAVBAR STARTS HERE -->
-    <!-- NAVBAR STARTS HERE -->
-    <!-- NAVBAR STARTS HERE -->
-    <nav class="bg-[#00C7A9] text-white z-10 relative">
-      <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-[#00C7A9]">
-        <div class="flex p-2">
-          <a class="flex" href="index.html"><img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
-          <h3 class="font-bold text-xl">
-            Guidebooking <br>Vancouver
-          </h3></a>
-        </div>
+<body class="min-h-screen bg-slate-50">
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-        <div class="md:flex gap-5 hidden md:visible">
-          <button>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/calendar-white.svg" alt="" />
-              <span>Itinerary</span></a>
-          </button>
-          <button>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/map-white.svg" alt="" />
-              <span>Event Map</span></a>
-          </button>
-          <button>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
-              <span>Settings</span></a>
-          </button>
-          <button>
-            <a class="flex flex-col items-center" href="login.html"
-              ><img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
-              <span>Log In</span></a>
-          </button>
-        </div>
+  <!-- our own navbar goes here -->
+  <site-navbar></site-navbar>
 
-        <div class="pt-4 px-2">
-          <div class="flex bg-white rounded-[20px] max-h-12">
-          <input type="text" placeholder="Search" class="max-h-10 bg-white rounded-[20px] m-2">
-          <button class="bg-[#26BDD9] rounded-r-[20px] px-2">
-            <img src="images/search-white.svg" class="w-[30px]"/>
+  <!-- Main content goes here -->
+  <main class="mx-auto w-full max-w-md px-4 py-10">
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <!-- Alerts -->
+      <div
+        id="authAlert"
+        class="hidden mb-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700"
+        role="alert"
+      ></div>
+
+      <!-- Login -->
+      <div id="loginView">
+        <h3 class="mb-4 text-center text-2xl font-semibold text-slate-900">Login</h3>
+
+        <form id="loginForm" novalidate class="space-y-3">
+          <div>
+            <input
+              type="email"
+              id="loginEmail"
+              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              type="password"
+              id="loginPassword"
+              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-cyan-600 px-4 py-2.5 font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          >
+            Login
           </button>
+        </form>
 
-        </div>
-
+        <p class="mt-4 text-center text-sm text-slate-600">
+          Don’t have an account?
+          <a href="#" id="toSignup" class="font-medium text-cyan-700 hover:underline">Sign up</a>
+        </p>
       </div>
 
-      <div class="flex justify-between p-3 rounded-t-[30px] gap-5 visible md:hidden fixed inset-x-0 bottom-0 min-w-full bg-[#00C7A9] md:relative">
-          <button>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/calendar-white.svg" alt="" />
-              <span>Itinerary</span></a>
-          </button>
-          <button>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/map-white.svg" alt="" />
-              <span>Event Map</span></a>
-          </button>
-          <button>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
-              <span>Settings</span></a>
-          </button>
-          <button>
-            <a class="flex flex-col items-center" href=""
-              ><img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
-              <span>Log In</span></a>
-          </button>
-        </div>
+      <!-- Signup -->
+      <div id="signupView" class="hidden">
+        <h3 class="mb-4 text-center text-2xl font-semibold text-slate-900">Sign Up</h3>
 
-    </nav>
+        <form id="signupForm" novalidate class="space-y-3">
+          <div>
+            <input
+              type="text"
+              id="signupName"
+              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              placeholder="First and Last Name"
+              aria-label="Full name"
+              required
+            />
+          </div>
 
-    <!-- NAVBAR ENDS HERE -->
-    <!-- NAVBAR ENDS HERE -->
-    <!-- NAVBAR ENDS HERE -->
+          <div>
+            <input
+              type="email"
+              id="signupEmail"
+              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              placeholder="Email"
+              required
+            />
+          </div>
 
+          <div>
+            <input
+              type="password"
+              id="signupPassword"
+              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              placeholder="Password"
+              required
+            />
+          </div>
 
-    <main class="bg-white py-40 ">
-      <div class="">
-        <div class="text-center rounded-xl bg-[#00C7A9] md:w-72 w-64 mx-auto py-5">
-        <h3 class="font-semibold text-white">Log in</h3>
-        <div class="">
-          <input type="text" placeholder="Username" class="rounded-lg my-2 px-1" id="logInUser"> <br>
-          <input type="text" placeholder="Password" class="rounded-lg my-2 px-1" id="logInPass">
-        </div>
-        <div class="text-blue-800 underline">
-          <a class="text-white" href="signup.html">New here?</a>
-        </div>
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-emerald-600 px-4 py-2.5 font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            Create Account
+          </button>
+        </form>
+
+        <p class="mt-4 text-center text-sm text-slate-600">
+          Already have an account?
+          <a href="#" id="toLogin" class="font-medium text-cyan-700 hover:underline">Login</a>
+        </p>
       </div>
-      </div>
-      
-
-
-    </main>
-
-
-    <!-- FOOTER STARTS HERE -->
-    <footer class="bg-gray-900 text-gray-200 py-10">
-      <div class="max-w-full justify-center px-4 flex md:gap-60 gap-14">
-        <div>
-          <h3 class="text-sm font-semibold text-gray-400 uppercase mb-4">
-            Services
-          </h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-white">Branding</a></li>
-            <li><a href="#" class="hover:text-white">Design</a></li>
-            <li><a href="#" class="hover:text-white">Marketing</a></li>
-            <li><a href="#" class="hover:text-white">Advertisement</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-sm font-semibold text-gray-400 uppercase mb-4">
-            Company
-          </h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-white">About us</a></li>
-            <li><a href="#" class="hover:text-white">Contact</a></li>
-            <li><a href="#" class="hover:text-white">Jobs</a></li>
-            <li><a href="#" class="hover:text-white">Press kit</a></li>
-          </ul>
-        </div>
-        <div>
-      <h3 class="text-sm font-semibold text-gray-400 uppercase mb-4">Legal</h3>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-white">Terms of use</a></li>
-        <li><a href="#" class="hover:text-white">Privacy policy</a></li>
-        <li><a href="#" class="hover:text-white">Cookie policy</a></li>
-      </ul>
     </div>
-      </div>
-    </footer>
+  </main>
+
+  <!-- our own footer goes here -->
+  <site-footer></site-footer>
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript scripts go here -->
+  <!---------------------------------------------->
+  <script type="module" src="/src/app.js"></script>
+
+  <!-- Firebase and authentication related scripts -->
+  <!-- The order of loading matters -->
+  <script type="module" src="/src/firebaseConfig.js"></script>
+  <script type="module" src="/src/authentication.js"></script>
+  <script type="module" src="/src/loginSignup.js"></script>
 </body>
 </html>
