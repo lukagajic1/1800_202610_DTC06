@@ -28,7 +28,7 @@ class SiteNavbar extends HTMLElement {
 
         <div class="md:flex gap-5 hidden md:visible">
           <button>
-            <a class="flex flex-col items-center" href=""
+            <a class="flex flex-col items-center" href="editItinerary.html"
               ><img class="w-[30px] h-[30px]" src="images/calendar-white.svg" alt="" />
               <span>Itinerary</span></a>
           </button>
