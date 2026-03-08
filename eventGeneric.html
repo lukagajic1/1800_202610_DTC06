@@ -10,12 +10,12 @@
     <!-- <script type="module" src="./src/main.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../src/main.js"></script>
+    <script src="../src/eventGeneric"></script>
     
     </head>
 
 
-    <body onload="eventPage()">
+    <body>
         <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
@@ -94,12 +94,25 @@
     <main>
         <div class="m-5 md:py-0 py-16">
             <div id="mainEventPage">
-
+              <div class="flex">
+                <div>
+                <h3 class="font-semibold text-2xl" id="eventName">Event Title</h3>
+                <p id="eventDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni sapiente, nostrum accusantium nisi vero aspernatur nesciunt soluta corporis fuga quasi error. Omnis laudantium amet vero quam enim illum, voluptate quae.</p>
+              </div>
+              <img id="eventImage" src="images/hike3.jpg" class="rounded-3xl">
+              </div>
+              <button class="bg-[#00649A] rounded-full p-2 text-white font-semibold">
+              <a href="">
+                <p class="">Add to itinerary</p>
+              </a>
+              </button>
+              
             </div>
             <div id="nearbyEvents">
 
             </div>
         </div>
+
 
         
     </main>
