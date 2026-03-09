@@ -33,6 +33,7 @@ async function displayEventInfo() {
 
     // add button class for clicking to add to itinerary to button
     const button = document.getElementById("addBtn");
+    // add eventlistener to the button that will execute the addtoplanner function
     button.addEventListener("click", async () => {
       await addToPlanner(id);
     });
@@ -42,24 +43,32 @@ async function displayEventInfo() {
   }
 }
 
+// Function that adds an event to the user's planner in Firestore
 async function addToPlanner(eventId) {
+  // check for log in
   if (!currentUser) {
     alert("Please log in first");
     return;
   }
 
+  // Create a reference to the current user's document in the "users" collection
   const userRef = doc(db, "users", currentUser.uid);
+
+  // Retrieve the user's document from Firestore
   const userSnap = await getDoc(userRef);
 
+  // If the user document does not exist in Firestore
   if (!userSnap.exists()) {
+    // Create the document and initialize the planner array with the current eventId as the first saved event
     await setDoc(userRef, { planner: [eventId] });
   } else {
+    // If the user document already exists, add the eventId to the planner array
+
     await updateDoc(userRef, {
+      // arrayUnion adds the eventId to the array and prevents duplicates
       planner: arrayUnion(eventId),
     });
   }
-
   alert("Added to planner");
 }
-
 displayEventInfo();
