@@ -22,7 +22,7 @@ onAuthStateChanged(auth, async (user) => {
 
 // Function that loads all saved events from the user's planner
 async function loadPlanner() {
-  // initialize an empty planner space for the cards 
+  // initialize an empty planner space for the cards
   plannerContainer.innerHTML = "";
 
   // Create a reference to the current user's document collection in Firestore
@@ -91,6 +91,8 @@ function attachRemoveButtons() {
 
   buttons.forEach((button) => {
     button.addEventListener("click", async () => {
+      
+      // Get the event ID stored in the button's data-id attribute
       const eventId = button.dataset.id;
       await removeFromPlanner(eventId);
     });
