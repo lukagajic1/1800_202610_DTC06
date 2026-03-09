@@ -30,7 +30,7 @@ async function loadEvents() {
   // Get all documents from the "events" collection and store in snapshot
   const snapshot = await getDocs(collection(db, "events"));
 
-  // Loop through each event document, docsnap is the doc containing the event data
+  // Loop through each event document, docsnap is the doc object containing the event data and data id 
   snapshot.forEach((docSnap) => {
     // Get the data stored in the current event document
     const event = docSnap.data();
