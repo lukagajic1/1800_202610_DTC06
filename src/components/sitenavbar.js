@@ -17,7 +17,7 @@ class SiteNavbar extends HTMLElement {
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
     <!-- NAVBAR STARTS HERE -->
-    <nav class="bg-[#00C7A9] text-white z-10 relative">
+    <nav class="bg-[#00C7A9] text-white z-20 relative">
       <div class="fixed inset-x-0 top-0 min-w-full md:relative md:w-auto flex justify-between bg-[#00C7A9]">
         <div class="flex p-2">
           <a class="flex" href="index.html"><img class="mx-2 w-[40px] h-[50px]" src="images/book-white.svg" alt="" />
