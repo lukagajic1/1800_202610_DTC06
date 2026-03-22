@@ -33,7 +33,7 @@ class SiteNavbar extends HTMLElement {
               <span>Itinerary</span></a>
           </button>
           <button>
-            <a class="flex flex-col items-center" href=""
+            <a class="flex flex-col items-center" href="map.html"
               ><img class="w-[30px] h-[30px]" src="images/map-white.svg" alt="" />
               <span>Event Map</span></a>
           </button>
