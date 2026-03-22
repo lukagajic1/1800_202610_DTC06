@@ -9,6 +9,7 @@
     <script type="module" src="src/itinerary.js"></script>
     <script type="module" src="/src/components/sitenavbar.js"></script>
   </head>
+
   <body class="bg-gray-100">
     <div><site-navbar></site-navbar></div>
 
@@ -24,7 +25,18 @@
         </a>
       </div>
 
+      <!-- EVENTS -->
       <div id="eventsContainer" class="space-y-4"></div>
+
+      <!-- VIEW MORE BUTTON -->
+      <div class="flex justify-center mt-8">
+        <button
+          id="viewMoreBtn"
+          class="bg-teal-500 text-white px-6 py-2 rounded-lg hidden hover:bg-teal-600"
+        >
+          View More
+        </button>
+      </div>
     </main>
   </body>
 </html>
