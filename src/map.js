@@ -1,3 +1,7 @@
+// Map implemented using Leaflet.js (https://leafletjs.com/)
+// Map tiles provided by OpenStreetMap
+
+
 // Wait for page to load
 document.addEventListener("DOMContentLoaded", () => {
   // Create the map (centered on Vancouver)
