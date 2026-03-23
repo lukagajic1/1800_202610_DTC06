@@ -46,39 +46,53 @@ async function loadPlanner() {
     return;
   }
 
-  // Loop through every event ID stored in the planner array
-  for (const eventId of planner) {
-    // Create a reference to the event document in the "events" collection
-    const eventRef = doc(db, "events", eventId);
 
-    // Retrieve the event document data
-    const eventSnap = await getDoc(eventRef);
+// collect events first, temporary array
+const events = [];
 
-    // Extract the event data
+// loop through the events in the planner and add them to temp array
+for (const eventId of planner) {
+  const eventRef = doc(db, "events", eventId);
+  const eventSnap = await getDoc(eventRef);
+
+  if (eventSnap.exists()) {
     const event = eventSnap.data();
-
-    // Create a card to display events in planner
-    const card = document.createElement("div");
-    card.className = "border rounded p-4 mb-4 bg-white";
-    card.innerHTML = `
-      <img src="${event.previmage}" width="200">
-
-      <h2 class="text-xl font-bold">${event.name}</h2>
-
-      <p>${event.date}</p>
-
-      <p>${event.descShort}</p>
-
-      <p>Type: ${event.type}</p>
-
-      <button class="removeBtn bg-red-500 text-white px-3 py-1 rounded mt-2"
-              data-id="${eventId}">
-        Remove
-      </button>
-    `;
-
-    plannerContainer.appendChild(card);
+// add every element from the event collection into temp array
+    events.push({
+      id: eventId,
+      ...event,
+    });
   }
+}
+
+// sort the events by date 
+events.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+// now the events array is sorted by date, loop through each one and create the card to display in order
+events.forEach((event) => {
+  const card = document.createElement("div");
+  card.className = "border rounded p-4 mb-4 bg-white";
+
+  card.innerHTML = `
+    <img src="${event.previmage}" width="200">
+
+    <h2 class="text-xl font-bold">${event.name}</h2>
+
+    <p>${new Date(event.date).toLocaleString()}</p>
+
+    <p>${event.descShort}</p>
+
+    <p>Type: ${event.type}</p>
+
+    <button class="removeBtn bg-red-500 text-white px-3 py-1 rounded mt-2"
+            data-id="${event.id}">
+      Remove
+    </button>
+  `;
+
+  plannerContainer.appendChild(card);
+});
+
 
   // After all cards are created, attach event listeners to remove buttons
   attachRemoveButtons();

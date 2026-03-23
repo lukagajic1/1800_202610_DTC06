@@ -8,6 +8,8 @@ import {
   setDoc,
   updateDoc,
   arrayUnion,
+  query,
+  orderBy,
 } from "firebase/firestore";
 
 // Get the HTML element where all event cards will be displayed
@@ -35,8 +37,9 @@ async function loadEvents() {
   // Clear the container before displaying events
   eventsContainer.innerHTML = "";
 
-  // Get all documents from the "events" collection and store in snapshot
-  const snapshot = await getDocs(collection(db, "events"));
+  // Get all documents from the "events" collection and store in snapshot, ordered by date in ascending order
+  const q = query(collection(db, "events"), orderBy("date", "asc"));
+  const snapshot = await getDocs(q);
 
   // Reset array
   allEvents = [];
@@ -79,8 +82,7 @@ function renderEvents() {
     card.innerHTML = `
         <img src="${event.previmage}" width="200">
         <h2 class="text-xl font-bold">${event.name}</h2>
-        <p>${event.date}</p>
-        <p>${event.descShort}</p>
+<p>${new Date(event.date).toLocaleString()}</p>        <p>${event.descShort}</p>
         <p>Type: ${event.type}</p>
         <button class="addBtn bg-teal-500 text-white px-3 py-1 rounded mt-2" data-id="${event.id}">
           Add to Planner
