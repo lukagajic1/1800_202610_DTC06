@@ -82,7 +82,8 @@ function renderEvents() {
     card.innerHTML = `
         <img src="${event.previmage}" width="200">
         <h2 class="text-xl font-bold">${event.name}</h2>
-<p>${new Date(event.date).toLocaleString()}</p>        <p>${event.descShort}</p>
+        <p>${new Date(event.date).toLocaleString()}</p>      
+        <p>${event.descShort}</p>
         <p>Type: ${event.type}</p>
         <button class="addBtn bg-teal-500 text-white px-3 py-1 rounded mt-2" data-id="${event.id}">
           Add to Planner
