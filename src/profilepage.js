@@ -1,0 +1,192 @@
+import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
+import { auth, db } from "/src/firebaseConfig.js";
+
+//------------------------------------------------------------
+// This function is an Event Listener for the file (image) picker
+// When an image is chosen, it will then save that image into the
+// user's document in Firestore
+//-------------------------------------------------------------
+
+function uploadImage() {
+  // Attach event listener to the file input
+  // Function to handle file selection and Base64 encoding
+  document
+    .getElementById("inputImage")
+    .addEventListener("change", handleFileSelect);
+  function handleFileSelect(event) {
+    var file = event.target.files[0]; // Get the selected file
+
+    if (file) {
+      var reader = new FileReader(); // Create a FileReader to read the file
+
+      // When file reading is complete
+      reader.onload = function (e) {
+        var base64String = e.target.result.split(",")[1]; // Extract Base64 data
+
+        // Save the Base64 string to Firestore under the user's profile
+        saveProfileImage(base64String);
+      };
+
+      // Read the file as a Data URL (Base64 encoding)
+      reader.readAsDataURL(file);
+    }
+  }
+}
+uploadImage();
+
+//---------------------------------------------------
+// Function to save the Base64 image to Firestore
+// as a key value pair in the user's document.
+// This function is triggered when a image is selected.
+//---------------------------------------------------
+async function saveProfileImage(base64String) {
+  // Wait for the currently signed-in user
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const userId = user.uid;
+      const userDocRef = doc(db, "users", userId);
+
+      try {
+        // Use setDoc with merge:true to avoid overwriting other fields
+        await setDoc(
+          userDocRef,
+          { profileImage: base64String },
+          { merge: true },
+        );
+
+        console.log("✅ Profile image saved successfully!");
+        displayProfileImage(base64String); // Show the image in the UI
+      } catch (error) {
+        console.error("❌ Error saving profile image:", error);
+      }
+    } else {
+      console.error("⚠️ No user is signed in.");
+    }
+  });
+}
+
+//----------------------------------------------------------------
+// Function to display the stored Base64 image on the profile page.
+// This is called when the user picks an image using the file chooser.
+// so that the user can see what picture they picked!
+// Before the image can be displayed, prepend meta data info back.
+//----------------------------------------------------------------
+function displayProfileImage(base64String) {
+  const imgElement = document.getElementById("profileImage"); // Assuming there's an <img> element with this ID
+  if (imgElement) {
+    imgElement.src = `data:image/png;base64,${base64String}`; // Set the image source to the Base64 string
+  } else {
+    console.error("⚠️ No image element found to display the profile image.");
+  }
+}
+
+//-----------------------------------------------------------
+// This is a default function that runs onload to popoulate
+// the profile page form with whatever data exists for that user
+// including the image that was previously chosen.
+//-----------------------------------------------------------
+function populateUserInfo() {
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      try {
+        // reference to the user document
+        const userRef = doc(db, "users", user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (userSnap.exists()) {
+          // Extract user info fields from document data
+          // and provide default empty strings if fields are missing
+          // Assumes knowledge of property names in the user document
+          const userData = userSnap.data();
+          const {
+            name = "",
+            school = "",
+            city = "",
+            profileImage = "",
+          } = userData;
+
+          // Populate form fields with user data
+          document.getElementById("nameInput").value = name;
+          document.getElementById("schoolInput").value = school;
+          document.getElementById("cityInput").value = city;
+          //---------------------------------------------
+          //Add metadata back, and assign to image source
+          //---------------------------------------------
+          //var userImage = userDoc.data().profileImage;
+          document.getElementById("profileImage").src =
+            "data:image/png;base64," + profileImage;
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error getting user document:", error);
+      }
+    } else {
+      console.log("No user is signed in");
+    }
+  });
+}
+
+//call the function to run it
+populateUserInfo();
+
+function initProfilePage() {
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) {
+      // Redirect to login page if no user is signed in
+      window.location.href = "login.html";
+      return;
+    }
+
+    await populateUserInfo(user.uid);
+  });
+}
+
+//-------------------------------------------------------------
+// Function to enable editing of user info form fields
+//-------------------------------------------------------------
+document.querySelector("#editButton").addEventListener("click", editUserInfo);
+function editUserInfo() {
+  //Enable the form fields
+  document.getElementById("personalInfoFields").disabled = false;
+}
+//-------------------------------------------------------------
+// Function to save updated user info from the profile form
+//-------------------------------------------------------------
+document.querySelector("#saveButton").addEventListener("click", saveUserInfo); //Add event listener for save button
+async function saveUserInfo() {
+  const user = auth.currentUser; // ✅ get the currently logged-in user
+  if (!user) {
+    alert("No user is signed in. Please log in first.");
+    return;
+  }
+  //enter code here
+
+  //a) get user entered values
+  const userName = document.getElementById("nameInput").value; //get the value of the field with id="nameInput"
+  const userSchool = document.getElementById("schoolInput").value; //get the value of the field with id="schoolInput"
+  const userCity = document.getElementById("cityInput").value; //get the value of the field with id="cityInput"
+  //b) update user's document in Firestore
+  await updateUserDocument(user.uid, userName, userSchool, userCity);
+  //c) disable edit
+  document.getElementById("personalInfoFields").disabled = true;
+}
+
+//-------------------------------------------------------------
+// Updates the user document in Firestore with new values
+// Parameters:
+//   uid (string)  – user’s UID
+//   name, school, city (strings)
+//-------------------------------------------------------------
+async function updateUserDocument(uid, name, school, city) {
+  try {
+    const userRef = doc(db, "users", uid);
+    await updateDoc(userRef, { name, school, city });
+    console.log("User document successfully updated!");
+  } catch (error) {
+    console.error("Error updating user document:", error);
+  }
+}
+
+initProfilePage();

@@ -3,27 +3,33 @@
   <head>
     <title>Guidebook Vancouver</title>
     <meta name="comp1800 template" content="My 1800 App" />
-
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <script type="module" src="./src/main.js"></script> -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../src/main.js"></script>
     <script type="module" src="./src/components/sitenavbar.js"></script>
     <script type="module" src="./src/components/sitefooter.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
 
   <body>
-    <!-- NAVBAR STARTS HERE -->
     <site-navbar></site-navbar>
-    <!-- NAVBAR ENDS HERE -->
 
-    <main></main>
+    <main class="p-6">
+      <div id="map" class="w-full h-[500px] rounded-xl"></div>
+    </main>
 
     <!-- FOOTER BEGINS HERE -->
+    <site-footer></site-footer>
 
-    <site-footer></site-footer>>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Your map script -->
+    <script src="/src/map.js"></script>
   </body>
 </html>

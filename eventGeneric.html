@@ -13,6 +13,7 @@
     <script type="module" src="./src/eventGeneric.js"></script>
   </head>
   <script type="module" src="./src/components/sitenavbar.js"></script>
+  <script type="module" src="./src/components/sitefooter.js"></script>
 
   <body>
     <!-- NAVBAR STARTS HERE -->
@@ -27,12 +28,7 @@
           <div class="flex">
             <div>
               <h3 class="font-semibold text-2xl" id="eventName">Event Title</h3>
-              <p id="eventDesc">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
-                sapiente, nostrum accusantium nisi vero aspernatur nesciunt
-                soluta corporis fuga quasi error. Omnis laudantium amet vero
-                quam enim illum, voluptate quae.
-              </p>
+              <p id="eventDescription"></p>
             </div>
             <img id="eventImage" src="images/hike3.jpg" class="rounded-3xl" />
           </div>
@@ -49,44 +45,6 @@
     </main>
 
     <!-- FOOTER BEGINS HERE -->
-    <!-- FOOTER BEGINS HERE -->
-    <!-- FOOTER BEGINS HERE -->
-
-    <footer class="bg-gray-900 text-gray-200 py-10">
-      <div class="max-w-full justify-center px-4 flex md:gap-60 gap-14">
-        <div>
-          <h3 class="text-sm font-semibold text-gray-400 uppercase mb-4">
-            Services
-          </h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-white">Branding</a></li>
-            <li><a href="#" class="hover:text-white">Design</a></li>
-            <li><a href="#" class="hover:text-white">Marketing</a></li>
-            <li><a href="#" class="hover:text-white">Advertisement</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-sm font-semibold text-gray-400 uppercase mb-4">
-            Company
-          </h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-white">About us</a></li>
-            <li><a href="#" class="hover:text-white">Contact</a></li>
-            <li><a href="#" class="hover:text-white">Jobs</a></li>
-            <li><a href="#" class="hover:text-white">Press kit</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-sm font-semibold text-gray-400 uppercase mb-4">
-            Legal
-          </h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-white">Terms of use</a></li>
-            <li><a href="#" class="hover:text-white">Privacy policy</a></li>
-            <li><a href="#" class="hover:text-white">Cookie policy</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    <site-footer></site-footer>
   </body>
 </html>

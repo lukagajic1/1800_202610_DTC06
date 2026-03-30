@@ -25,9 +25,11 @@ async function displayEventInfo() {
     const event = eventSnap.data();
     const name = event.name;
     const previmage = event.previmage;
+    const descLong = event.descLong
 
     //updates page
     document.getElementById("eventName").textContent = name;
+    document.getElementById("eventDescription").textContent = descLong
     const img = document.getElementById("eventImage");
     img.src = previmage;
 

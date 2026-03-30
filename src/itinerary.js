@@ -8,13 +8,23 @@ import {
   setDoc,
   updateDoc,
   arrayUnion,
+  query,
+  orderBy,
 } from "firebase/firestore";
 
 // Get the HTML element where all event cards will be displayed
 const eventsContainer = document.getElementById("eventsContainer");
+const viewMoreBtn = document.getElementById("viewMoreBtn");
 
 // Variable to store the currently logged-in user
 let currentUser = null;
+
+// store all events for pagination
+let allEvents = [];
+
+// pagination settings
+const eventsPerLoad = 4;
+let visibleEvents = 4;
 
 // check if logged in, set current user to the logged in user
 onAuthStateChanged(auth, async (user) => {
@@ -27,10 +37,14 @@ async function loadEvents() {
   // Clear the container before displaying events
   eventsContainer.innerHTML = "";
 
-  // Get all documents from the "events" collection and store in snapshot
-  const snapshot = await getDocs(collection(db, "events"));
+  // Get all documents from the "events" collection and store in snapshot, ordered by date in ascending order
+  const q = query(collection(db, "events"), orderBy("date", "asc"));
+  const snapshot = await getDocs(q);
 
-  // Loop through each event document, docsnap is the doc object containing the event data and data id 
+  // Reset array
+  allEvents = [];
+
+  // Loop through each event document, docsnap is the doc object containing the event data and data id
   snapshot.forEach((docSnap) => {
     // Get the data stored in the current event document
     const event = docSnap.data();
@@ -38,6 +52,29 @@ async function loadEvents() {
     // Get the unique document ID of the event
     const eventId = docSnap.id;
 
+    // Store event in array for pagination
+    allEvents.push({
+      id: eventId,
+      ...event,
+    });
+  });
+
+  // Reset visible count
+  visibleEvents = eventsPerLoad;
+
+  // Render events
+  renderEvents();
+}
+
+// render function , shows 4 events at a time
+function renderEvents() {
+  // Clear container
+  eventsContainer.innerHTML = "";
+
+  // Only show a subset of events
+  const eventsToShow = allEvents.slice(0, visibleEvents);
+
+  eventsToShow.forEach((event) => {
     // create div element to hold the event card
     const card = document.createElement("div");
     card.className = "border rounded p-4 mb-4 bg-white";
@@ -45,10 +82,10 @@ async function loadEvents() {
     card.innerHTML = `
         <img src="${event.previmage}" width="200">
         <h2 class="text-xl font-bold">${event.name}</h2>
-        <p>${event.date}</p>
+        <p>${new Date(event.date).toLocaleString()}</p>      
         <p>${event.descShort}</p>
         <p>Type: ${event.type}</p>
-        <button class="addBtn bg-teal-500 text-white px-3 py-1 rounded mt-2" data-id="${eventId}">
+        <button class="addBtn bg-teal-500 text-white px-3 py-1 rounded mt-2" data-id="${event.id}">
           Add to Planner
         </button>
       `;
@@ -58,7 +95,21 @@ async function loadEvents() {
 
   // after creating the cards, add event listener to each button to add to itinerary
   attachAddButtons();
+
+  // show/hide View More button
+  if (visibleEvents >= allEvents.length) {
+    viewMoreBtn.classList.add("hidden");
+  } else {
+    viewMoreBtn.classList.remove("hidden");
+  }
 }
+
+// View More click handler
+viewMoreBtn.addEventListener("click", () => {
+  visibleEvents += eventsPerLoad;
+  renderEvents();
+});
+
 // Function to add click event listeners to every "Add to Planner" button
 function attachAddButtons() {
   // Select all buttons with class "addBtn"
@@ -77,6 +128,7 @@ function attachAddButtons() {
     });
   });
 }
+
 // Function that adds an event to the logged-in user's planner
 async function addToPlanner(eventId) {
   if (!currentUser) {
