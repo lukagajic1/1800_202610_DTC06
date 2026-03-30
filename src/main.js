@@ -200,7 +200,9 @@ async function displayCardsDynamically() {
             
           </button>
           <button class="bg-[#00649A] rounded-full p-2 text-white font-semibold">
-            <p class="">View on Map</p>
+            <a href="map.html?docID=${doc.id}">
+                <p class="">View on Map</p>
+              </a>
           </button>
           </div>
           
