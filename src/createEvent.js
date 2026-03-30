@@ -8,26 +8,76 @@ import {
 } from "firebase/firestore";
 import {uploadBytes} from "firebase/storage"
 
-function uploadEvent(){
+const GEOAPIFY_API_KEY = "73634d3116a14faea2a762935d5e2483".trim()
+
+
+async function findAddress(address, postalCode){
+    try{
+        const fullAddress = `${address}, ${postalCode}, Canada`
+
+        const url =
+        `https://api.geoapify.com/v1/geocode/search` +
+        `?text=${encodeURIComponent(fullAddress)}` +
+        `&filter=countrycode:ca` +
+        `&apiKey=${encodeURIComponent(GEOAPIFY_API_KEY)}`
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+        // console.log("fullAddress:", fullAddress);
+        // console.log("Geoapify response:", data);
+
+        if (data.error) {
+            throw new Error(
+                `Geocoding failed: ${data.statusCode || ""} ${data.error} - ${data.message || ""}`
+            )
+        }
+
+        if (!data.features || !data.features.length) {
+            throw new Error(`Geocoding failed: no results found for "${fullAddress}"`)
+            }
+
+        const result = data.features[0];
+        const lat = result.properties.lat;
+        const lng = result.properties.lon;
+        const formattedAddress = result.properties.formatted;
+        const newObj = {
+            result: result,
+            lat: lat,
+            lng: lng,
+            formattedAddress: formattedAddress
+        }
+        // console.log(newObj)
+        return newObj
+        }
+    catch(error){
+        console.error(error)
+    }
+}
+
+async function uploadEvent(){
     // to do: grab new event id, create new collection in event called images, use uploadbytes to attempt to place images there
-    const eventsRef = collection(db, "events");
+    const eventsRef = collection(db, "events")
     const eventTitle = document.getElementById("title").value
     const eventTime = document.getElementById("time").value
     const eventType = document.getElementById("type").value
     const eventDesc = document.getElementById("description").value
     const eventImg = document.getElementById("prevImg").value
-    // this didn't work.
-    // uploadBytes(eventsRef, eventImg).then((snapshot) => {
-    //     console.log("hopefully this works")
-    // })
+    const eventAddress = document.getElementById("address").value
+    const eventPostalCode = document.getElementById("postalCode").value
+    const address = await findAddress(eventAddress, eventPostalCode)
+    console.log(address)
+
     addDoc(eventsRef, {
         name: eventTitle,
         date: eventTime,
         descLong: eventDesc,
         descShort: eventDesc,
         type: eventType,
-        // this didn't work either.
-        // previmage:eventImg
+        addressData: address.result,
+        address: address.formattedAddress,
+        lat: address.lat,
+        lng: address.lng,
         last_updated: serverTimestamp(),
     })
 }
