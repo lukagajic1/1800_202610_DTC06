@@ -183,7 +183,7 @@ async function displayCardsDynamically() {
       let result_html = "";
       result_html += ``;
       result_html += `
-      <div class="p-4 shadow-2xl border-slate-200 border-2 rounded-2xl lg:w-80">
+      <div class="p-4 shadow-lg border-slate-200 border-2 rounded-2xl lg:w-80">
           <img class="rounded-3xl my-1" src=${newEvent.previmage} alt="eventimg"/>
           <div class="flex gap-4 mb-2">
             <div class="">
