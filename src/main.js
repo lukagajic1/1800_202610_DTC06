@@ -193,13 +193,13 @@ async function displayCardsDynamically() {
             
           </div>
           <div class="flex justify-between">
-            <button class="bg-[#00649A] rounded-full p-2 text-white font-semibold">
+            <button class="bg-[#00C7A9] rounded-full p-2 text-white font-semibold">
               <a href="eventGeneric.html?docID=${doc.id}">
                 <p class="">Read More</p>
               </a>
             
           </button>
-          <button class="bg-[#00649A] rounded-full p-2 text-white font-semibold">
+          <button class="bg-[#00C7A9] rounded-full p-2 text-white font-semibold">
             <a href="map.html?docID=${doc.id}">
                 <p class="">View on Map</p>
               </a>
