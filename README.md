@@ -41,27 +41,9 @@ To run the application locally:
 
 Once the application is running:
 
-1.  Browse the list of hiking trails displayed on the main page.
-2.  Click the heart icon (or similar) to mark a trail as a favorite.
-3.  View your favorite hikes in the favorites section.
-
----
-
-
-## Project Structure
-
-```
-elmo-hikes/
-├── src/
-│   ├── main.js
-├── styles/
-│   └── style.css
-├── public/
-├── images/
-├── index.html
-├── package.json
-├── README.md
-```
+1.  Browse the events displayed on the main page.
+2.  Click the view event page and navigate to the "add to itinierary" button.
+3.  View your saved events in the itinerary section.
 
 ---
 
