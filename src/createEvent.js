@@ -55,7 +55,7 @@ async function findAddress(address, postalCode) {
   }
 }
 
-// image encoding copied from tech tips 
+// image encoding copied from tech tips
 function readImageAsBase64(file) {
   return new Promise((resolve, reject) => {
     if (!file) {
@@ -73,7 +73,8 @@ function readImageAsBase64(file) {
   });
 }
 
-async function uploadEvent() {
+async function uploadEvent(event) {
+  event.preventDefault();
   // to do: grab new event id, create new collection in event called images, use uploadbytes to attempt to place images there
   const eventsRef = collection(db, "events");
   const eventTitle = document.getElementById("title").value;
@@ -86,6 +87,18 @@ async function uploadEvent() {
   const address = await findAddress(eventAddress, eventPostalCode);
   console.log(address);
   const encodedImage = await readImageAsBase64(eventImg);
+
+  if (
+    !eventTitle ||
+    !eventTime ||
+    !eventType ||
+    !eventAddress ||
+    !eventPostalCode ||
+    !eventDesc
+  ) {
+    alert("Please fill in all fields");
+    return;
+  }
 
   addDoc(eventsRef, {
     name: eventTitle,
