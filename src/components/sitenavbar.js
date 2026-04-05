@@ -39,8 +39,8 @@ class SiteNavbar extends HTMLElement {
           </button>
           <button>
             <a class="flex flex-col items-center" href="profilepage.html">
-              <img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
-              <span>Settings</span>
+              <img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+              <span>Profile</span>
             </a>
           </button>
           <button id="authControls"></button>
@@ -84,8 +84,8 @@ class SiteNavbar extends HTMLElement {
         </button>
         <button>
           <a class="flex flex-col items-center" href="profilepage.html">
-            <img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
-            <span>Settings</span>
+            <img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+            <span>Profile</span>
           </a>
         </button>
         <button id="authControlsMobile"></button>
@@ -234,7 +234,7 @@ class SiteNavbar extends HTMLElement {
     const placeholder = `
       <button>
         <a class="flex flex-col items-center" href="">
-          <img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+          <img class="w-[30px] h-[30px]" src="images/logout.png" alt="" />
           <span>Log Out</span>
         </a>
       </button>
@@ -251,7 +251,7 @@ class SiteNavbar extends HTMLElement {
         desktopHTML = `
           <button id="signOutBtn">
             <a class="flex flex-col items-center" href="">
-              <img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+              <img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
               <span>Log Out</span>
             </a>
           </button>
@@ -259,7 +259,7 @@ class SiteNavbar extends HTMLElement {
         mobileHTML = `
           <button id="signOutBtnMobile">
             <a class="flex flex-col items-center" href="">
-              <img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+              <img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
               <span>Log Out</span>
             </a>
           </button>
@@ -268,7 +268,7 @@ class SiteNavbar extends HTMLElement {
         desktopHTML = `
           <button>
             <a class="flex flex-col items-center" href="login.html">
-              <img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+              <img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
               <span>Log In</span>
             </a>
           </button>
@@ -276,7 +276,7 @@ class SiteNavbar extends HTMLElement {
         mobileHTML = `
           <button>
             <a class="flex flex-col items-center" href="login.html">
-              <img class="w-[30px] h-[30px]" src="images/profile-white.svg" alt="" />
+              <img class="w-[30px] h-[30px]" src="images/gear-white.svg" alt="" />
               <span>Log In</span>
             </a>
           </button>
