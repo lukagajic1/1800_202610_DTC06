@@ -55,6 +55,24 @@ async function findAddress(address, postalCode) {
   }
 }
 
+// image encoding copied from tech tips 
+function readImageAsBase64(file) {
+  return new Promise((resolve, reject) => {
+    if (!file) {
+      resolve("./images/hike2.jpg"); // default image
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      resolve(e.target.result); // full Base64 string
+    };
+    reader.onerror = function () {
+      reject(new Error("Error reading image"));
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 async function uploadEvent() {
   // to do: grab new event id, create new collection in event called images, use uploadbytes to attempt to place images there
   const eventsRef = collection(db, "events");
@@ -62,12 +80,12 @@ async function uploadEvent() {
   const eventTime = document.getElementById("time").value;
   const eventType = document.getElementById("type").value;
   const eventDesc = document.getElementById("description").value;
-  const eventImg = document.getElementById("prevImg").value;
+  const eventImg = document.getElementById("prevImg").files[0];
   const eventAddress = document.getElementById("address").value;
   const eventPostalCode = document.getElementById("postalCode").value;
   const address = await findAddress(eventAddress, eventPostalCode);
   console.log(address);
-  const defaultImage = "./images/hike2.jpg";
+  const encodedImage = await readImageAsBase64(eventImg);
 
   addDoc(eventsRef, {
     name: eventTitle,
@@ -80,7 +98,7 @@ async function uploadEvent() {
     lat: address.lat,
     lng: address.lng,
     last_updated: serverTimestamp(),
-    previmage: defaultImage,
+    previmage: encodedImage,
   });
   alert("Event uploaded successfully!");
 }
