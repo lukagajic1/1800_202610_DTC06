@@ -184,7 +184,7 @@ async function displayCardsDynamically() {
       result_html += ``;
       result_html += `
       <div class="shrink-0 mb-6 border-slate-200 border-2 rounded-2xl w-80 h-96 bg-gray-100 overflow-hidden mx-auto">
-          <img src="/images/seawall.jpg" class="w-full h-1/2 object-cover" alt="${newEvent.name}"/>
+          <img src="${newEvent.previmage}" class="w-full h-1/2 object-cover" alt="${newEvent.name}"/>
           <div class="px-3">
             <h1 class="text-center m-1 pt-1 text-lg font-semibold">
             ${newEvent.name} 
