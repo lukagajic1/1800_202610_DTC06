@@ -10,10 +10,9 @@
     <script type="module" src="/src/components/sitenavbar.js"></script>
   </head>
 
-  <body class="bg-gray-100">
+  <body class="bg-gray-100 min-h-screen flex flex-col">
     <div><site-navbar></site-navbar></div>
-
-    <main class="max-w-5xl mx-auto pt-24 pb-24 md:p-6">
+    <main class="max-w-5xl mx-auto p-6 pt-24 pb-24 md:p-6 flex-1 w-full">
       <div class="flex justify-between items-center mb-6">
         <h1 class="text-3xl font-bold">All Events</h1>
 
@@ -39,4 +38,6 @@
       </div>
     </main>
   </body>
+  <site-footer class="mt-auto"></site-footer>
+  <script type="module" src="/src/components/sitefooter.js"></script>
 </html>
