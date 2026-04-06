@@ -41,7 +41,7 @@ async function findUserData(userId){
         return plannerRef
       }
       catch(error){
-        console.log("oopsies", error)
+        console.log(error)
       }
 }
 
