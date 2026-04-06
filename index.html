@@ -17,7 +17,7 @@
     <!-- <script type="module" src="/src/components/site-footer.js"></script> -->
   </head>
 
-  <body class="bg-gray-200">
+  <body class="bg-gray-200 min-h-screen flex flex-col">
     <!-- NAVBAR STARTS HERE -->
 
     <site-navbar></site-navbar>
@@ -25,50 +25,47 @@
     <!-- NAVBAR ENDS HERE -->
     <div class="bg-white max-w-6xl mx-auto">
       <main class="p-18 pb-24 md:pt-0 pt-10 relative">
-      <!-- HERO STARTS HERE -->
-      <div
-        class="bg-[url(/images/vancouver_skyline_edited.png)] p-5 bg-cover bg-no-repeat py-16 relative"
-      >
-        <h1 class="text-7xl font-light text-white">
-          Your
-          <mark class="text-[#00C7A9] bg-transparent font-semibold">
-            Guidebook
-          </mark>
-          <br />
-          To
-          <mark class="text-[#00C7A9] bg-transparent font-semibold">
-            Vancouver</mark
+          <!-- HERO STARTS HERE -->
+          <div
+            class="bg-[url(/images/vancouver_skyline_edited.png)] p-5 bg-cover bg-no-repeat py-32 relative"
           >
-        </h1>
-        <p
-          class="absolute bottom-0 right-0 p-2 text-base text-white font-extralight"
-        >
-          Welcome <span id="name-goes-here">[user_name]</span>!
-        </p>
+            <h1 class="text-7xl font-light text-white">
+              Your
+              <mark class="text-[#00C7A9] bg-transparent font-semibold">
+                Guidebook
+              </mark>
+              <br />
+              To
+              <mark class="text-[#00C7A9] bg-transparent font-semibold">
+                Vancouver</mark
+              >
+            </h1>
+            <p
+              class="absolute bottom-0 right-0 p-2 text-base text-white font-extralight"
+            >
+              Welcome <span id="name-goes-here">[user_name]</span>!
+            </p>
+          </div>
+        </main>
+        
+      <div>
+        <div class="flex flex-col px-8 mx-auto">
+          <section class="flex py-6 max-w-5xl mx-auto gap-5">
+            <h1 class="text-3xl font-bold">Events in Vancouver</h1>
+            <button class="rounded-xl bg-slate-300 px-10 py-2 drop-shadow-xl">
+              <a href="itinerary.html">See All Events</a>
+            </button>
+            <button class="rounded-xl bg-slate-300 px-10 py-2 drop-shadow-xl">
+              <a href="createEvent.html">Create Event</a>
+            </button>
+          </section>
+        </div>
       </div>
-      <!-- HERO ENDS HERE -->
-    </main>
-
-    <div>
-      <div class="flex flex-col px-8 mx-auto">
-        <section class="flex py-6 max-w-5xl mx-auto gap-5">
-          <h1 class="text-3xl font-bold">Events in Vancouver</h1>
-          <button class="rounded-xl bg-slate-300 px-10 py-2 drop-shadow-xl">
-            <a href="itinerary.html">See All Events</a>
-          </button>
-          <button class="rounded-xl bg-slate-300 px-10 py-2 drop-shadow-xl">
-            <a href="createEvent.html">Create Event</a>
-          </button>
-        </section>
-      </div>
-    </div>
-    <div
-      id="eventHolder"
-      class="lg:flex md:gap-2 md:flex-wrap justify-center max-w-5xl mx-auto"
-    ></div>
+      <div id="eventHolder"class="lg:flex md:gap-2 md:flex-wrap justify-center max-w-5xl mx-auto">
+        <!-- HERO ENDS HERE -->
 
     </div>
-    
+
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -80,6 +77,6 @@
 
     <!-- Link to scripts of your own -->
     <!-- <script type="module" src="./src/main.js"></script> -->
-    <site-footer></site-footer>
+    <site-footer class="mt-auto"></site-footer>
   </body>
 </html>

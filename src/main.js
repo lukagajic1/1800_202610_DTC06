@@ -183,30 +183,30 @@ async function displayCardsDynamically() {
       let result_html = "";
       result_html += ``;
       result_html += `
-      <div class="p-4 shadow-lg border-slate-200 border-2 rounded-2xl lg:w-80">
-          <img class="rounded-3xl my-1" src=${newEvent.previmage} alt="eventimg"/>
-          <div class="flex gap-4 mb-2">
-            <div class="">
-              <h3 class="font-semibold text-2xl">${newEvent.name}</h3>
-              <p class="text-lg">${newEvent.descShort}</p>
-            </div>
-            
-          </div>
+      <div class="shrink-0 mb-6 border-slate-200 border-2 rounded-2xl w-80 h-96 bg-gray-100 overflow-hidden mx-auto">
+          <img src="/images/seawall.jpg" class="w-full h-1/2 object-cover" alt="${newEvent.name}"/>
+          <div class="px-3">
+            <h1 class="text-center m-1 pt-1 text-lg font-semibold">
+            ${newEvent.name} 
+          </h1>
+          <p class="pb-2">${newEvent.descShort}</p>
           <div class="flex justify-between">
-            <button class="bg-[#00C7A9] rounded-full p-2 text-white font-semibold">
+            <button class="bg-[#00C7A9] rounded-full px-2 py-1 text-white font-semibold">
               <a href="eventGeneric.html?docID=${doc.id}">
                 <p class="">Read More</p>
               </a>
             
           </button>
-          <button class="bg-[#00C7A9] rounded-full p-2 text-white font-semibold">
+          <button class="bg-[#00C7A9] rounded-full px-2 py-1 text-white font-semibold">
             <a href="map.html?docID=${doc.id}">
                 <p class="">View on Map</p>
               </a>
           </button>
           </div>
           
+          </div>
         </div>
+        
       
     `;
 
