@@ -106,57 +106,23 @@ class SiteNavbar extends HTMLElement {
     });
   }
 
-  setupSearch() {
-    const preDefinedSuggestions = [
-      {
-        name: "FIFA World Cup 2026: Australia vs UEFA Playoff Winner",
-        id: "RSd4akqIbSKHqSRED2cz",
-      },
-      {
-        name: "FIFA World Cup 2026: Canada vs Qatar",
-        id: "YfW8C6cBIID3Yz1UNIvM",
-      },
-      {
-        name: "FIFA World Cup 2026: New Zealand vs Egypt",
-        id: "MtQJIID3BInBhwCoRjoO",
-      },
-      {
-        name: "FIFA World Cup 2026: Switzerland vs Canada",
-        id: "6RhiB9W5Il1CDpHby5LZ",
-      },
-      {
-        name: "FIFA World Cup 2026: Group G Match",
-        id: "2H6kfs7jJ1URCa7K27kk",
-      },
-      {
-        name: "FIFA World Cup 2026: Round of 32 Match",
-        id: "JAbnCvWVYMvGGa8mt6QY",
-      },
-      {
-        name: "FIFA World Cup 2026: Round of 16 Match",
-        id: "nSKQNzSG7oXrjon51ziG",
-      },
-      {
-        name: "Vancouver International Jazz Festival (Opening Weekend)",
-        id: "anuJAfawXDMuhcdhwxqH",
-      },
-      {
-        name: "Khatsahlano Street Party",
-        id: "6Biyt24mtBtTetdcEDxa",
-      },
-      {
-        name: "Shipyards Night Market",
-        id: "hrBLwwmriBOgE9dKXMPs",
-      },
-      {
-        name: "Outdoor Movie Night at Stanley Park",
-        id: "VirnpSgXKRs6lKt5R9n3",
-      },
-      {
-        name: "Canada Day Celebrations at Canada Place",
-        id: "c42MiKDCRn3fReMncinz",
-      },
-    ];
+  async setupSearch() {
+    const { collection, getDocs } = await import("firebase/firestore");
+    const { db } = await import("/src/firebaseConfig.js");
+
+    let preDefinedSuggestions = [];
+
+    try {
+      const querySnapshot = await getDocs(collection(db, "events"));
+      querySnapshot.forEach((doc) => {
+        preDefinedSuggestions.push({
+          name: doc.data().name,
+          id: doc.id,
+        });
+      });
+    } catch (error) {
+      console.error("Error fetching events:", error);
+    }
 
     const searchInput = this.querySelector("#searchInput");
     const suggestions = this.querySelector("#suggestions");
