@@ -30,11 +30,13 @@ async function displayEventInfo() {
 
     //updates page
     document.getElementById("eventName").textContent = name;
-    document.getElementById("eventDescription").textContent = descLong
+    document.getElementById("eventDescription").textContent = descLong;
     document.getElementById("eventAddress").textContent = `📍 ${address}`;
 
     const img = document.getElementById("eventImage");
     img.src = previmage;
+    const mapBtn = document.getElementById("mapBtn");
+    mapBtn.href = `map.html?docID=${id}`;
 
     // add button class for clicking to add to itinerary to button
     const button = document.getElementById("addBtn");
