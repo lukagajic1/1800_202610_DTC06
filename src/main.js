@@ -22,6 +22,9 @@ function addEventData() {
     descLong:
       "Kick off Vancouver’s FIFA World Cup 2026 hosting with an exciting Group D matchup at BC Place. This match brings international football energy to the city and gives fans the chance to experience one of the biggest sporting events in the world right here in Vancouver.",
     last_updated: serverTimestamp(),
+    address: "777 Pacific Blvd, Vancouver, BC V6B 4Y8, Canada",
+    lat: 49.275299,
+    lng: -123.112122,
   });
 
   addDoc(eventsRef, {
@@ -34,6 +37,9 @@ function addEventData() {
     descLong:
       "One of the most anticipated Vancouver matches of the tournament, this Group B game features Canada on home soil at BC Place. Fans can expect a high-energy atmosphere, national pride, and a memorable downtown Vancouver event experience.",
     last_updated: serverTimestamp(),
+    address: "777 Pacific Blvd, Vancouver, BC V6B 4Y8, Canada",
+    lat: 49.275299,
+    lng: -123.112122,
   });
 
   addDoc(eventsRef, {
@@ -46,6 +52,9 @@ function addEventData() {
     descLong:
       "This Group G fixture brings two international teams to Vancouver for an evening match at BC Place. It is a great option for football fans looking to attend a competitive World Cup group-stage game in the heart of the city.",
     last_updated: serverTimestamp(),
+    address: "777 Pacific Blvd, Vancouver, BC V6B 4Y8, Canada",
+    lat: 49.275299,
+    lng: -123.112122,
   });
 
   addDoc(eventsRef, {
@@ -58,6 +67,9 @@ function addEventData() {
     descLong:
       "Canada’s second Vancouver appearance at the World Cup sees them face Switzerland in Group B. Hosted at BC Place, this midday match is expected to draw strong local support and create one of the most exciting sports atmospheres in Vancouver in 2026.",
     last_updated: serverTimestamp(),
+    address: "777 Pacific Blvd, Vancouver, BC V6B 4Y8, Canada",
+    lat: 49.275299,
+    lng: -123.112122,
   });
 
   addDoc(eventsRef, {
@@ -70,6 +82,9 @@ function addEventData() {
     descLong:
       "This final Vancouver group-stage match will feature Group G teams at BC Place. Even before final team confirmation, this event is part of Vancouver’s official FIFA World Cup 2026 hosting schedule and will bring another major tournament night to the city.",
     last_updated: serverTimestamp(),
+    address: "777 Pacific Blvd, Vancouver, BC V6B 4Y8, Canada",
+    lat: 49.275299,
+    lng: -123.112122,
   });
 
   addDoc(eventsRef, {
@@ -82,6 +97,9 @@ function addEventData() {
     descLong:
       "The World Cup knockout stage comes to Vancouver with a Round of 32 match at BC Place. As teams fight to stay alive in the tournament, this event is expected to deliver one of the most intense and memorable matchday experiences in the city.",
     last_updated: serverTimestamp(),
+    address: "777 Pacific Blvd, Vancouver, BC V6B 4Y8, Canada",
+    lat: 49.275299,
+    lng: -123.112122,
   });
 
   addDoc(eventsRef, {
@@ -94,6 +112,9 @@ function addEventData() {
     descLong:
       "Vancouver’s final FIFA World Cup 2026 match is a Round of 16 showdown at BC Place. With a place in the quarterfinals on the line, this knockout game is expected to bring a huge crowd and one of the most exciting football atmospheres the city will see during the tournament.",
     last_updated: serverTimestamp(),
+    address: "777 Pacific Blvd, Vancouver, BC V6B 4Y8, Canada",
+    lat: 49.275299,
+    lng: -123.112122,
   });
 
   addDoc(eventsRef, {
@@ -106,6 +127,9 @@ function addEventData() {
     descLong:
       "The Vancouver International Jazz Festival begins with performances across downtown and surrounding neighborhoods. Expect a mix of free outdoor concerts and ticketed shows featuring local and international artists.",
     last_updated: serverTimestamp(),
+    address: "150 E 3rd Ave, Vancouver, BC V5T 1C8, Canada",
+    lat: 49.268134,
+    lng: -123.101109,
   });
 
   addDoc(eventsRef, {
@@ -118,6 +142,9 @@ function addEventData() {
     descLong:
       "Khatsahlano Street Party is one of Vancouver’s largest free music and arts festivals. West 4th Avenue is transformed into a lively street filled with multiple music stages, food vendors, and local businesses.",
     last_updated: serverTimestamp(),
+    address: "202-1857 West 4th Avenue, Vancouver, BC V6J 1M4, Canada",
+    lat: 49.268122,
+    lng: -123.1374831,
   });
 
   addDoc(eventsRef, {
@@ -130,6 +157,10 @@ function addEventData() {
     descLong:
       "The Shipyards Night Market offers a mix of food trucks, craft vendors, and live entertainment. Located in North Vancouver, it’s a great place to enjoy summer evenings with views of the city skyline.",
     last_updated: serverTimestamp(),
+    address:
+      "Shipbuilder’s Square, 19 Wallace Mews, North Vancouver, BC V7L 0B2, Canada",
+    lat: 49.309,
+    lng: -123.0745,
   });
 
   addDoc(eventsRef, {
@@ -142,6 +173,9 @@ function addEventData() {
     descLong:
       "Enjoy a summer outdoor movie experience in Stanley Park. Bring blankets, snacks, and friends for a relaxed evening watching a popular film in one of Vancouver’s most iconic parks.",
     last_updated: serverTimestamp(),
+    address: "8501 Stanley Park Dr, Vancouver, BC V6G 3E2, Canada",
+    lat: 49.299999,
+    lng: -123.139999,
   });
 
   addDoc(eventsRef, {
@@ -154,6 +188,9 @@ function addEventData() {
     descLong:
       "Canada Day at Canada Place features live music, cultural performances, food vendors, and activities throughout the day. It’s one of the biggest national celebrations in Vancouver with stunning waterfront views.",
     last_updated: serverTimestamp(),
+    address: "999 Canada Place, Vancouver, BC V6C 3T4, Canada",
+    lat: 49.288803,
+    lng: -123.111252,
   });
 }
 
@@ -180,7 +217,7 @@ async function displayCardsDynamically() {
     const eventHolder = document.getElementById("eventHolder");
     querySnapshot.forEach((doc) => {
       let newEvent = doc.data();
-      
+
       let cardHTML = `
       <div class="flex flex-col shrink-0 mb-6 border-slate-200 border-2 rounded-2xl w-80 h-[23.5rem] bg-gray-100 overflow-hidden mx-auto">
           <img src="${newEvent.previmage}" class="w-full h-40 object-cover" alt="${newEvent.name}" />
@@ -204,13 +241,12 @@ async function displayCardsDynamically() {
           </div>
       </div>
       `;
-      eventHolder.insertAdjacentHTML('beforeend', cardHTML);
+      eventHolder.insertAdjacentHTML("beforeend", cardHTML);
     });
   } catch (error) {
     console.error("Error getting documents:", error);
   }
 }
-
 
 displayCardsDynamically();
 
