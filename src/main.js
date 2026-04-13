@@ -18,7 +18,7 @@ function addEventData() {
     date: "2026-06-13T21:00:00",
     descShort:
       "Opening Vancouver World Cup match at BC Place featuring Australia against the UEFA playoff winner in Group D.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/australia_winner.png",
     descLong:
       "Kick off Vancouver’s FIFA World Cup 2026 hosting with an exciting Group D matchup at BC Place. This match brings international football energy to the city and gives fans the chance to experience one of the biggest sporting events in the world right here in Vancouver.",
     last_updated: serverTimestamp(),
@@ -30,7 +30,7 @@ function addEventData() {
     date: "2026-06-18T15:00:00",
     descShort:
       "Watch Canada take on Qatar in a major Group B showdown at BC Place in Vancouver.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/canada_qatar.png",
     descLong:
       "One of the most anticipated Vancouver matches of the tournament, this Group B game features Canada on home soil at BC Place. Fans can expect a high-energy atmosphere, national pride, and a memorable downtown Vancouver event experience.",
     last_updated: serverTimestamp(),
@@ -42,7 +42,7 @@ function addEventData() {
     date: "2026-06-21T18:00:00",
     descShort:
       "Group G action comes to Vancouver as New Zealand faces Egypt at BC Place.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/newzealand_egypt.png",
     descLong:
       "This Group G fixture brings two international teams to Vancouver for an evening match at BC Place. It is a great option for football fans looking to attend a competitive World Cup group-stage game in the heart of the city.",
     last_updated: serverTimestamp(),
@@ -54,7 +54,7 @@ function addEventData() {
     date: "2026-06-24T12:00:00",
     descShort:
       "Canada returns to BC Place for a lunchtime Group B match against Switzerland.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/canada_switzerland.png",
     descLong:
       "Canada’s second Vancouver appearance at the World Cup sees them face Switzerland in Group B. Hosted at BC Place, this midday match is expected to draw strong local support and create one of the most exciting sports atmospheres in Vancouver in 2026.",
     last_updated: serverTimestamp(),
@@ -66,7 +66,7 @@ function addEventData() {
     date: "2026-06-26T20:00:00",
     descShort:
       "A late-evening Group G match at BC Place with participating teams to be confirmed.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/group_g_match.png",
     descLong:
       "This final Vancouver group-stage match will feature Group G teams at BC Place. Even before final team confirmation, this event is part of Vancouver’s official FIFA World Cup 2026 hosting schedule and will bring another major tournament night to the city.",
     last_updated: serverTimestamp(),
@@ -78,7 +78,7 @@ function addEventData() {
     date: "2026-07-02T20:00:00",
     descShort:
       "Knockout soccer arrives in Vancouver with a Round of 32 match at BC Place.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/round32.jpg",
     descLong:
       "The World Cup knockout stage comes to Vancouver with a Round of 32 match at BC Place. As teams fight to stay alive in the tournament, this event is expected to deliver one of the most intense and memorable matchday experiences in the city.",
     last_updated: serverTimestamp(),
@@ -90,7 +90,7 @@ function addEventData() {
     date: "2026-07-07T13:00:00",
     descShort:
       "A Round of 16 knockout match takes place at BC Place in Vancouver.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/round16.jpg",
     descLong:
       "Vancouver’s final FIFA World Cup 2026 match is a Round of 16 showdown at BC Place. With a place in the quarterfinals on the line, this knockout game is expected to bring a huge crowd and one of the most exciting football atmospheres the city will see during the tournament.",
     last_updated: serverTimestamp(),
@@ -102,7 +102,7 @@ function addEventData() {
     date: "2026-06-20T18:00:00",
     descShort:
       "Live jazz performances kick off across Vancouver with outdoor and ticketed shows.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/jazz_festival.jpg",
     descLong:
       "The Vancouver International Jazz Festival begins with performances across downtown and surrounding neighborhoods. Expect a mix of free outdoor concerts and ticketed shows featuring local and international artists.",
     last_updated: serverTimestamp(),
@@ -114,7 +114,7 @@ function addEventData() {
     date: "2026-06-27T12:00:00",
     descShort:
       "Massive street festival on West 4th with live music, food vendors, and local shops.",
-    previmage: "/images/hike2.jpg",
+    previmage: "/images/khatsahlano.jpg",
     descLong:
       "Khatsahlano Street Party is one of Vancouver’s largest free music and arts festivals. West 4th Avenue is transformed into a lively street filled with multiple music stages, food vendors, and local businesses.",
     last_updated: serverTimestamp(),
@@ -126,7 +126,7 @@ function addEventData() {
     date: "2026-06-26T17:00:00",
     descShort:
       "Evening market in North Vancouver with food trucks, live music, and waterfront views.",
-    previmage: "/images/hike3.jpg",
+    previmage: "/images/shipyards.jpg",
     descLong:
       "The Shipyards Night Market offers a mix of food trucks, craft vendors, and live entertainment. Located in North Vancouver, it’s a great place to enjoy summer evenings with views of the city skyline.",
     last_updated: serverTimestamp(),
@@ -138,7 +138,7 @@ function addEventData() {
     date: "2026-07-03T21:30:00",
     descShort:
       "Watch a movie under the stars in Stanley Park with friends and family.",
-    previmage: "/images/hike1.jpg",
+    previmage: "/images/outdoor_movie.jpg",
     descLong:
       "Enjoy a summer outdoor movie experience in Stanley Park. Bring blankets, snacks, and friends for a relaxed evening watching a popular film in one of Vancouver’s most iconic parks.",
     last_updated: serverTimestamp(),
@@ -150,7 +150,7 @@ function addEventData() {
     date: "2026-07-01T15:00:00",
     descShort:
       "Celebrate Canada Day with live performances, food, and waterfront festivities.",
-    previmage: "/images/hike2.jpg",
+    previmage: "/images/canada_day.jpg",
     descLong:
       "Canada Day at Canada Place features live music, cultural performances, food vendors, and activities throughout the day. It’s one of the biggest national celebrations in Vancouver with stunning waterfront views.",
     last_updated: serverTimestamp(),
