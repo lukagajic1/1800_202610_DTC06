@@ -4,80 +4,64 @@
     <title>Guidebook Vancouver</title>
     <meta name="comp1800 template" content="My 1800 App" />
 
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="../src/main.js"></script>
-    <script type="module" src="./src/components/sitenavbar.js"></script>
-    <script type="module" src="./src/components/sitefooter.js"></script>
-
-    <script></script>
-    <!-- <script type="module" src="/src/components/site-footer.js"></script> -->
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/components/sitenavbar.js"></script>
+    <script type="module" src="/src/components/sitefooter.js"></script>
   </head>
 
   <body class="bg-gray-200 min-h-screen flex flex-col">
-    <!-- NAVBAR STARTS HERE -->
-
     <site-navbar></site-navbar>
 
-    <!-- NAVBAR ENDS HERE -->
-    <div class="bg-white max-w-6xl mx-auto">
+    <div class="bg-white max-w-6xl mx-auto w-full flex-1">
       <main class="p-18 pb-24 md:pt-0 pt-10 relative">
-          <!-- HERO STARTS HERE -->
-          <div
-            class="bg-[url(/images/vancouver_skyline_edited.png)] p-5 bg-cover bg-no-repeat py-32 relative"
-          >
-            <h1 class="text-7xl font-light text-white">
-              Your
-              <mark class="text-[#00C7A9] bg-transparent font-semibold">
-                Guidebook
-              </mark>
-              <br />
-              To
-              <mark class="text-[#00C7A9] bg-transparent font-semibold">
-                Vancouver</mark
-              >
-            </h1>
-            <p
-              class="absolute bottom-0 right-0 p-2 text-base text-white font-extralight"
-            >
-              Welcome <span id="name-goes-here"></span>!
-            </p>
-          </div>
-        </main>
-        
+        <div
+          class="bg-[url(/images/vancouver_skyline_edited.png)] p-5 bg-cover bg-no-repeat py-32 relative"
+        >
+          <h1 class="text-7xl font-light text-white">
+            Your
+            <mark class="text-[#00C7A9] bg-transparent font-semibold">
+              Guidebook
+            </mark>
+            <br />
+            To
+            <mark class="text-[#00C7A9] bg-transparent font-semibold">
+              Vancouver
+            </mark>
+          </h1>
+
+          <p class="absolute bottom-0 right-0 p-2 text-base text-white font-extralight">
+            Welcome <span id="name-goes-here">[user]</span>!
+          </p>
+        </div>
+      </main>
+
       <div>
         <div class="flex flex-col px-8 mx-auto">
           <section class="flex py-6 max-w-5xl mx-auto gap-5">
             <h1 class="text-3xl font-bold">Events in Vancouver</h1>
+
             <button class="rounded-xl bg-slate-300 px-10 py-2 drop-shadow-xl">
               <a href="itinerary.html">See All Events</a>
             </button>
+
             <button class="rounded-xl bg-slate-300 px-10 py-2 drop-shadow-xl">
               <a href="createEvent.html">Create Event</a>
             </button>
           </section>
         </div>
       </div>
-      <div id="eventHolder" class="lg:flex md:gap-2 md:flex-wrap justify-center max-w-5xl mx-auto">
-      <!-- HERO ENDS HERE -->
 
+      <div
+        id="eventHolder"
+        class="lg:flex md:gap-2 md:flex-wrap justify-center max-w-5xl mx-auto"
+      ></div>
     </div>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
-    <!-- <script type="module" src="./src/main.js"></script> -->
-    
+    <site-footer class="mt-auto"></site-footer>
   </body>
-  <site-footer class="mt-auto"></site-footer>
 </html>
