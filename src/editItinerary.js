@@ -97,9 +97,13 @@ async function loadPlanner() {
             ${new Date(event.date).toLocaleString()}
           </p>
 
-          <p class="text-gray-700 mb-2">
-            ${event.descShort}
-          </p>
+<p class="text-gray-700 mb-2">
+  ${event.descShort}
+</p>
+
+<p class="text-gray-500 text-sm mb-2">
+  📍 ${event.address}
+</p>
 
           <p class="text-gray-700 font-medium mb-4">
             Type: ${event.type}

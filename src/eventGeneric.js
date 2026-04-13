@@ -25,11 +25,14 @@ async function displayEventInfo() {
     const event = eventSnap.data();
     const name = event.name;
     const previmage = event.previmage;
-    const descLong = event.descLong
+    const descLong = event.descLong;
+    const address = event.address;
 
     //updates page
     document.getElementById("eventName").textContent = name;
     document.getElementById("eventDescription").textContent = descLong
+    document.getElementById("eventAddress").textContent = `📍 ${address}`;
+
     const img = document.getElementById("eventImage");
     img.src = previmage;
 
