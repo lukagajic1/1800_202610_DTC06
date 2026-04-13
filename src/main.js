@@ -175,51 +175,42 @@ seedEvents();
 
 async function displayCardsDynamically() {
   const eventsCollectionRef = collection(db, "events");
-
   try {
     const querySnapshot = await getDocs(eventsCollectionRef);
+    const eventHolder = document.getElementById("eventHolder");
     querySnapshot.forEach((doc) => {
       let newEvent = doc.data();
-      let result_html = "";
-      result_html += ``;
-      result_html += `
-      <div class="shrink-0 mb-6 border-slate-200 border-2 rounded-2xl w-80 h-96 bg-gray-100 overflow-hidden mx-auto">
-          <img src="${newEvent.previmage}" class="w-full h-1/2 object-cover" alt="${newEvent.name}"/>
-          <div class="px-3">
-            <h1 class="text-center m-1 pt-1 text-lg font-semibold">
-            ${newEvent.name} 
-          </h1>
-          <p class="pb-2">${newEvent.descShort}</p>
-          <div class="flex justify-between">
-            <button class="bg-[#00C7A9] rounded-full px-2 py-1 text-white font-semibold">
-              <a href="eventGeneric.html?docID=${doc.id}">
-                <p class="">Read More</p>
-              </a>
-            
-          </button>
-          <button class="bg-[#00C7A9] rounded-full px-2 py-1 text-white font-semibold">
-            <a href="map.html?docID=${doc.id}">
-                <p class="">View on Map</p>
-              </a>
-          </button>
-          </div>
-          
-          </div>
-        </div>
-        
       
-    `;
-
-      let result_div = "";
-      result_div = document.getElementById("eventHolder");
-      let x = document.createElement(`div`);
-      x.innerHTML = result_html;
-      result_div.appendChild(x);
+      let cardHTML = `
+      <div class="flex flex-col shrink-0 mb-6 border-slate-200 border-2 rounded-2xl w-80 h-[23.5rem] bg-gray-100 overflow-hidden mx-auto">
+          <img src="${newEvent.previmage}" class="w-full h-40 object-cover" alt="${newEvent.name}" />
+          
+          <div class="flex flex-col flex-grow px-3 py-1.5">
+              <h1 class="text-center text-lg font-bold line-clamp-2 h-14 flex items-center justify-center">
+                  ${newEvent.name} 
+              </h1>
+              <p class="text-base text-gray-700 line-clamp-3 h-[4.5rem]">
+                  ${newEvent.descShort}
+              </p>
+              
+              <div class="mt-auto flex justify-between gap-2">
+                  <button class="bg-[#00C7A9] rounded-full px-3 py-1.5 text-white font-semibold text-sm">
+                      <a href="eventGeneric.html?docID=${doc.id}">Read More</a>
+                  </button>
+                  <button class="bg-[#00C7A9] rounded-full px-3 py-1.5 text-white font-semibold text-sm">
+                      <a href="map.html?docID=${doc.id}">View on Map</a>
+                  </button>
+              </div>
+          </div>
+      </div>
+      `;
+      eventHolder.insertAdjacentHTML('beforeend', cardHTML);
     });
   } catch (error) {
     console.error("Error getting documents:", error);
   }
 }
+
 
 displayCardsDynamically();
 
