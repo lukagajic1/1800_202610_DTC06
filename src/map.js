@@ -85,9 +85,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           if (itinData !== null) {
             console.log(itinData);
-L.marker([itinData.lat, itinData.lng])
-  .addTo(map)
-  .bindPopup(itinData.name);          }
+            L.marker([itinData.lat, itinData.lng])
+              .addTo(map)
+              .bindPopup(itinData.name);
+          }
         }
       }
     });
