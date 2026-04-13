@@ -59,7 +59,7 @@ async function findAddress(address, postalCode) {
 function readImageAsBase64(file) {
   return new Promise((resolve, reject) => {
     if (!file) {
-      resolve("./images/hike2.jpg"); // default image
+      resolve("./images/placeholder.jpg"); // default image
       return;
     }
     const reader = new FileReader();
