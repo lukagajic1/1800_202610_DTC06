@@ -84,9 +84,9 @@ async function uploadEvent(event) {
   const eventImg = document.getElementById("prevImg").files[0];
   const eventAddress = document.getElementById("address").value;
   const eventPostalCode = document.getElementById("postalCode").value;
+
   const address = await findAddress(eventAddress, eventPostalCode);
   console.log(address);
-  const encodedImage = await readImageAsBase64(eventImg);
 
   if (
     !eventTitle ||
@@ -100,7 +100,14 @@ async function uploadEvent(event) {
     return;
   }
 
-  addDoc(eventsRef, {
+  if (!address) {
+    alert("Could not find that address");
+    return;
+  }
+
+  const encodedImage = await readImageAsBase64(eventImg);
+
+  const docRef = await addDoc(eventsRef, {
     name: eventTitle,
     date: eventTime,
     descLong: eventDesc,
@@ -113,7 +120,9 @@ async function uploadEvent(event) {
     last_updated: serverTimestamp(),
     previmage: encodedImage,
   });
-  alert("Event uploaded successfully!");
+
+  // 🔥 redirect instead of alert
+  window.location.href = `eventGeneric.html?docID=${docRef.id}`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
