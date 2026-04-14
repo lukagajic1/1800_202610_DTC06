@@ -2,7 +2,7 @@
 
 
 ## Overview
-Guidebooking Vancouver is a client-side JavaScript web application that helps users discover and explore events in Vancouver. The app displays a list of local events, each with details such as name, location, type, and an image. Users can browse the list and add events to the itinerary for easy access later.
+Guidebooking Vancouver is a client-side JavaScript web application that helps users discover and explore events in Vancouver. The app displays a list of local events, each with details such as name, location, type, and an image. Users can browse the list and add events to their itinerary for easy access later.
 
 Developed for the COMP 1800 course, this project applies User-Centred Design practices and agile project management, and demonstrates integration with Firebase backend services for storing user favorites.
 
@@ -12,7 +12,8 @@ Developed for the COMP 1800 course, this project applies User-Centred Design pra
 ## Features
 
 - Browse a list of events with images and details
-- Add and remove events to and from itinierary
+- Add and remove events to and from itinerary
+- Update profile picture and fields
 - Create events and add them to the database
 - View events on a dynamically loaded map
 - Responsive design for desktop and mobile
@@ -32,6 +33,10 @@ Developed for the COMP 1800 course, this project applies User-Centred Design pra
 
 ## Usage
 
+Visit https://guidebookingvancouver.web.app/
+
+or 
+
 To run the application locally:
 
 1.  **Clone** the repository.
@@ -42,7 +47,7 @@ To run the application locally:
 Once the application is running:
 
 1.  Browse the events displayed on the main page.
-2.  Click the view event page and navigate to the "add to itinierary" button.
+2.  Click the view event page and navigate to the "add to itinerary" button.
 3.  View your saved events in the itinerary section.
 
 ---
@@ -58,9 +63,10 @@ Once the application is running:
 
 ## Acknowledgments
 
-- Trail data and images are for demonstration purposes only.
-- Code snippets were adapted from resources such as [Stack Overflow](https://stackoverflow.com/) and [MDN Web Docs](https://developer.mozilla.org/).
-- Icons sourced from [FontAwesome](https://fontawesome.com/) and images from [Unsplash](https://unsplash.com/).
+- Code snippets were adapted from Comp1800 Lectures.
+- Icons sourced from [flaticon](https://www.flaticon.com/)
+- Images sourced from [Sporting News](https://www.sportingnews.com/), [Grintahub](https://grintahub.com/), [SeatGeek](https://seatgeek.com/fifa-world-cup-tickets), [Destination Vancouver](https://www.destinationvancouver.com/things-to-do/the-shipyards-night-market), [CreativeBC Instagram](https://www.instagram.com/creativebcs), [Wikipedia – Vancouver International Jazz Festival](https://en.wikipedia.org/wiki/Vancouver_International_Jazz_Festival)
+- Map sourced from [Leaflet.js](https://leafletjs.com/)
 
 ---
 
