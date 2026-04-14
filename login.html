@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <title>Guidebook Vancouver</title>
     <meta name="comp1800 template" content="My 1800 App" />
 
@@ -8,136 +8,148 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <script type="module" src="./src/main.js"></script> -->
-     <script src="https://cdn.tailwindcss.com"></script>
-     <script type="module" src="/src/firebaseConfig.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="/src/firebaseConfig.js"></script>
     <script type="module" src="/src/authentication.js"></script>
     <script type="module" src="/src/loginSignup.js"></script>
     <script type="module" src="/src/components/sitenavbar.js"></script>
     <script type="module" src="/src/components/sitefooter.js"></script>
-    
-    
-</head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
-  <!------------------------------>
-  <!-- Your HTML Layout go here -->
-  <!------------------------------>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col">
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
 
-  <!-- our own navbar goes here -->
-  <site-navbar></site-navbar>
+    <!-- our own navbar goes here -->
+    <site-navbar></site-navbar>
 
-  <!-- Main content goes here -->
-  <main class="mx-auto w-full max-w-md px-4 py-10 pt-24">
-    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <!-- Alerts -->
-      <div
-        id="authAlert"
-        class="hidden mb-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700"
-        role="alert"
-      ></div>
+    <!-- Main content goes here -->
+    <main class="mx-auto w-full max-w-md px-4 py-10 pt-24">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <!-- Alerts -->
+        <div
+          id="authAlert"
+          class="hidden mb-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700"
+          role="alert"
+        ></div>
 
-      <!-- Login -->
-      <div id="loginView">
-        <h3 class="mb-4 text-center text-2xl font-semibold text-slate-900">Login</h3>
-
-        <form id="loginForm" novalidate class="space-y-3">
-          <div>
-            <input
-              type="email"
-              id="loginEmail"
-              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              placeholder="Email"
-              required
-            />
-          </div>
-
-          <div>
-            <input
-              type="password"
-              id="loginPassword"
-              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              placeholder="Password"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            class="w-full rounded-lg bg-cyan-600 px-4 py-2.5 font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-          >
+        <!-- Login -->
+        <div id="loginView">
+          <h3 class="mb-4 text-center text-2xl font-semibold text-slate-900">
             Login
-          </button>
-        </form>
+          </h3>
 
-        <p class="mt-4 text-center text-sm text-slate-600">
-          Don’t have an account?
-          <a href="#" id="toSignup" class="font-medium text-cyan-700 hover:underline">Sign up</a>
-        </p>
+          <form id="loginForm" novalidate class="space-y-3">
+            <div>
+              <input
+                type="email"
+                id="loginEmail"
+                class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div>
+              <input
+                type="password"
+                id="loginPassword"
+                class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="Password"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full rounded-lg bg-cyan-600 px-4 py-2.5 font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            >
+              Login
+            </button>
+          </form>
+
+          <p class="mt-4 text-center text-sm text-slate-600">
+            Don’t have an account?
+            <a
+              href="#"
+              id="toSignup"
+              class="font-medium text-cyan-700 hover:underline"
+              >Sign up</a
+            >
+          </p>
+        </div>
+
+        <!-- Signup -->
+        <div id="signupView" class="hidden">
+          <h3 class="mb-4 text-center text-2xl font-semibold text-slate-900">
+            Sign Up
+          </h3>
+
+          <form id="signupForm" novalidate class="space-y-3">
+            <div>
+              <input
+                type="text"
+                id="signupName"
+                class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="First and Last Name"
+                aria-label="Full name"
+                required
+              />
+            </div>
+
+            <div>
+              <input
+                type="email"
+                id="signupEmail"
+                class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div>
+              <input
+                type="password"
+                id="signupPassword"
+                class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="Password"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full rounded-lg bg-emerald-600 px-4 py-2.5 font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              Create Account
+            </button>
+          </form>
+
+          <p class="mt-4 text-center text-sm text-slate-600">
+            Already have an account?
+            <a
+              href="#"
+              id="toLogin"
+              class="font-medium text-cyan-700 hover:underline"
+              >Login</a
+            >
+          </p>
+        </div>
       </div>
+    </main>
 
-      <!-- Signup -->
-      <div id="signupView" class="hidden">
-        <h3 class="mb-4 text-center text-2xl font-semibold text-slate-900">Sign Up</h3>
+    <!-- our own footer goes here -->
+    <site-footer class="mt-auto"></site-footer>
 
-        <form id="signupForm" novalidate class="space-y-3">
-          <div>
-            <input
-              type="text"
-              id="signupName"
-              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              placeholder="First and Last Name"
-              aria-label="Full name"
-              required
-            />
-          </div>
+    <!---------------------------------------------->
+    <!-- Your own JavaScript scripts go here -->
+    <!---------------------------------------------->
+    <script type="module" src="/src/app.js"></script>
 
-          <div>
-            <input
-              type="email"
-              id="signupEmail"
-              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              placeholder="Email"
-              required
-            />
-          </div>
-
-          <div>
-            <input
-              type="password"
-              id="signupPassword"
-              class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              placeholder="Password"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            class="w-full rounded-lg bg-emerald-600 px-4 py-2.5 font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-          >
-            Create Account
-          </button>
-        </form>
-
-        <p class="mt-4 text-center text-sm text-slate-600">
-          Already have an account?
-          <a href="#" id="toLogin" class="font-medium text-cyan-700 hover:underline">Login</a>
-        </p>
-      </div>
-    </div>
-  </main>
-
-  <!-- our own footer goes here -->
-  <site-footer class="mt-auto"></site-footer>
-
-  <!---------------------------------------------->
-  <!-- Your own JavaScript scripts go here -->
-  <!---------------------------------------------->
-  <script type="module" src="/src/app.js"></script>
-
-  <!-- Firebase and authentication related scripts -->
-  <!-- The order of loading matters -->
-  <script type="module" src="/src/firebaseConfig.js"></script>
-  <script type="module" src="/src/authentication.js"></script>
-  <script type="module" src="/src/loginSignup.js"></script>
-</body>
+    <!-- Firebase and authentication related scripts -->
+    <!-- The order of loading matters -->
+    <script type="module" src="/src/firebaseConfig.js"></script>
+    <script type="module" src="/src/authentication.js"></script>
+    <script type="module" src="/src/loginSignup.js"></script>
+  </body>
 </html>

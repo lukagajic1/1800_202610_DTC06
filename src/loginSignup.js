@@ -8,11 +8,7 @@
 
 // import './styles/style.css';
 
-import {
-  loginUser,
-  signupUser,
-  authErrorMessage,
-} from './authentication.js';
+import { loginUser, signupUser, authErrorMessage } from "./authentication.js";
 
 // --- Login and Signup Page ---
 // Handles toggling between Login/Signup views and form submits
@@ -20,35 +16,35 @@ import {
 
 function initAuthUI() {
   // --- DOM Elements ---
-  const alertEl = document.getElementById('authAlert');
-  const loginView = document.getElementById('loginView');
-  const signupView = document.getElementById('signupView');
-  const toSignupBtn = document.getElementById('toSignup');
-  const toLoginBtn = document.getElementById('toLogin');
-  const loginForm = document.getElementById('loginForm');
-  const signupForm = document.getElementById('signupForm');
-  const redirectUrl = 'index.html';
+  const alertEl = document.getElementById("authAlert");
+  const loginView = document.getElementById("loginView");
+  const signupView = document.getElementById("signupView");
+  const toSignupBtn = document.getElementById("toSignup");
+  const toLoginBtn = document.getElementById("toLogin");
+  const loginForm = document.getElementById("loginForm");
+  const signupForm = document.getElementById("signupForm");
+  const redirectUrl = "index.html";
 
   // --- Helper Functions ---
   function setVisible(el, visible) {
     if (!el) return;
-    el.classList.toggle('hidden', !visible);
+    el.classList.toggle("hidden", !visible);
   }
 
   let errorTimeout;
 
   function showError(msg) {
     if (!alertEl) return;
-    alertEl.textContent = msg || '';
-    alertEl.classList.remove('hidden');
+    alertEl.textContent = msg || "";
+    alertEl.classList.remove("hidden");
     clearTimeout(errorTimeout);
     errorTimeout = setTimeout(hideError, 5000);
   }
 
   function hideError() {
     if (!alertEl) return;
-    alertEl.classList.add('hidden');
-    alertEl.textContent = '';
+    alertEl.classList.add("hidden");
+    alertEl.textContent = "";
     clearTimeout(errorTimeout);
   }
 
@@ -56,38 +52,38 @@ function initAuthUI() {
     const submitBtn = form?.querySelector('[type="submit"]');
     if (submitBtn) {
       submitBtn.disabled = disabled;
-      submitBtn.classList.toggle('opacity-60', disabled);
-      submitBtn.classList.toggle('cursor-not-allowed', disabled);
+      submitBtn.classList.toggle("opacity-60", disabled);
+      submitBtn.classList.toggle("cursor-not-allowed", disabled);
     }
   }
 
   // --- Event Listeners ---
-  toSignupBtn?.addEventListener('click', (e) => {
+  toSignupBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     hideError();
     setVisible(loginView, false);
     setVisible(signupView, true);
-    signupView?.querySelector('input')?.focus();
+    signupView?.querySelector("input")?.focus();
   });
 
-  toLoginBtn?.addEventListener('click', (e) => {
+  toLoginBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     hideError();
     setVisible(signupView, false);
     setVisible(loginView, true);
-    loginView?.querySelector('input')?.focus();
+    loginView?.querySelector("input")?.focus();
   });
 
   // Login form submit
-  loginForm?.addEventListener('submit', async (e) => {
+  loginForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     hideError();
 
-    const email = document.querySelector('#loginEmail')?.value?.trim() ?? '';
-    const password = document.querySelector('#loginPassword')?.value ?? '';
+    const email = document.querySelector("#loginEmail")?.value?.trim() ?? "";
+    const password = document.querySelector("#loginPassword")?.value ?? "";
 
     if (!email || !password) {
-      showError('Please enter your email and password.');
+      showError("Please enter your email and password.");
       return;
     }
 
@@ -105,16 +101,16 @@ function initAuthUI() {
   });
 
   // Signup form submit
-  signupForm?.addEventListener('submit', async (e) => {
+  signupForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     hideError();
 
-    const name = document.querySelector('#signupName')?.value?.trim() ?? '';
-    const email = document.querySelector('#signupEmail')?.value?.trim() ?? '';
-    const password = document.querySelector('#signupPassword')?.value ?? '';
+    const name = document.querySelector("#signupName")?.value?.trim() ?? "";
+    const email = document.querySelector("#signupEmail")?.value?.trim() ?? "";
+    const password = document.querySelector("#signupPassword")?.value ?? "";
 
     if (!name || !email || !password) {
-      showError('Please fill in name, email, and password.');
+      showError("Please fill in name, email, and password.");
       return;
     }
 
@@ -132,4 +128,4 @@ function initAuthUI() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initAuthUI);
+document.addEventListener("DOMContentLoaded", initAuthUI);
