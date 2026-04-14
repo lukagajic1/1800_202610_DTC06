@@ -55,7 +55,7 @@ async function findAddress(address, postalCode) {
   }
 }
 
-// image encoding copied from tech tips
+// image encoding from tech tips
 function readImageAsBase64(file) {
   return new Promise((resolve, reject) => {
     if (!file) {
